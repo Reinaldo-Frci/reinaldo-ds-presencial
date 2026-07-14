@@ -1,0 +1,31 @@
+{% extends 'core/base.html' %}
+{% block titulo %}Registrar empréstimo{% endblock %}
+{% block conteudo %}
+<h1>Registrar empréstimo de EPIs</h1>
+<form method="post" class="painel" novalidate>
+  {% csrf_token %}
+  {% if form.non_field_errors %}<div class="erros-form">{{ form.non_field_errors }}</div>{% endif %}
+  {% if formset.non_form_errors %}<div class="erros-form">{{ formset.non_form_errors }}</div>{% endif %}
+
+  {% include 'core/_form_campos.html' %}
+
+  <h2>Itens do empréstimo</h2>
+  <p class="ajuda" style="margin-bottom:10px;">Selecione o EPI e a quantidade. O sistema valida o estoque disponível e a validade do CA automaticamente.</p>
+  {{ formset.management_form }}
+  <table class="nao-imprimir">
+    <tr><th style="width:70%;">EPI (com estoque disponível)</th><th>Quantidade</th></tr>
+    {% for f in formset %}
+    <tr>
+      <td>{{ f.epi }}{% for hidden in f.hidden_fields %}{{ hidden }}{% endfor %}
+          {% if f.errors %}<ul class="erros">{% for e in f.non_field_errors %}<li>{{ e }}</li>{% endfor %}
+          {% for e in f.epi.errors %}<li>{{ e }}</li>{% endfor %}{% for e in f.quantidade.errors %}<li>{{ e }}</li>{% endfor %}</ul>{% endif %}</td>
+      <td>{{ f.quantidade }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  <div class="acoes">
+    <a class="btn btn-secundario" href="{% url 'emprestimo_lista' %}">Cancelar</a>
+    <button class="btn btn-primario" type="submit">Confirmar empréstimo e emitir ficha</button>
+  </div>
+</form>
+{% endblock %}

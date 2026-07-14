@@ -1,0 +1,62 @@
+{% extends 'core/base.html' %}
+{% block titulo %}Relatórios{% endblock %}
+{% block conteudo %}
+<h1>Relatórios de empréstimos</h1>
+<form method="get" class="painel" style="margin-bottom:18px;">
+  <div class="grade">
+    <div class="grupo"><label>Colaborador</label>
+      <select class="campo" name="colaborador">
+        <option value="">Todos</option>
+        {% for c in colaboradores %}<option value="{{ c.pk }}" {% if filtros.colaborador == c.pk|stringformat:'s' %}selected{% endif %}>{{ c.nome }}</option>{% endfor %}
+      </select>
+    </div>
+    <div class="grupo"><label>EPI</label>
+      <select class="campo" name="epi">
+        <option value="">Todos</option>
+        {% for e in epis %}<option value="{{ e.pk }}" {% if filtros.epi == e.pk|stringformat:'s' %}selected{% endif %}>{{ e.nome }}</option>{% endfor %}
+      </select>
+    </div>
+    <div class="grupo"><label>De</label><input class="campo" type="date" name="inicio" value="{{ filtros.inicio }}"></div>
+    <div class="grupo"><label>Até</label><input class="campo" type="date" name="fim" value="{{ filtros.fim }}"></div>
+  </div>
+  <div class="acoes"><button class="btn btn-primario" type="submit">Gerar relatório</button></div>
+</form>
+
+<div class="cartoes">
+  <div class="cartao" style="min-width:300px;">
+    <h2 style="margin-top:0;">Total por colaborador</h2>
+    <table>
+      <tr><th>Colaborador</th><th>Itens emprestados</th></tr>
+      {% for linha in por_colaborador %}
+      <tr><td>{{ linha.emprestimo__colaborador__nome }}</td><td>{{ linha.total }}</td></tr>
+      {% empty %}<tr><td colspan="2">Sem registros para os filtros.</td></tr>{% endfor %}
+    </table>
+  </div>
+  <div class="cartao" style="min-width:300px;">
+    <h2 style="margin-top:0;">Total por equipamento</h2>
+    <table>
+      <tr><th>EPI</th><th>Itens emprestados</th></tr>
+      {% for linha in por_epi %}
+      <tr><td>{{ linha.epi__nome }}</td><td>{{ linha.total }}</td></tr>
+      {% empty %}<tr><td colspan="2">Sem registros para os filtros.</td></tr>{% endfor %}
+    </table>
+  </div>
+</div>
+
+<h2>Detalhamento</h2>
+<table>
+  <tr><th>Data</th><th>Colaborador</th><th>EPI</th><th>Qtde.</th><th>Devolvido em</th><th>Condição</th></tr>
+  {% for item in itens %}
+  <tr>
+    <td>{{ item.emprestimo.data_emprestimo|date:'d/m/Y' }}</td>
+    <td>{{ item.emprestimo.colaborador.nome }}</td>
+    <td>{{ item.epi.nome }}</td>
+    <td>{{ item.quantidade }}</td>
+    <td>{% if item.devolvido %}{{ item.data_devolucao|date:'d/m/Y' }}{% else %}—{% endif %}</td>
+    <td>{{ item.get_condicao_devolucao_display|default:'—' }}</td>
+  </tr>
+  {% empty %}
+  <tr><td colspan="6">Nenhum registro encontrado para os filtros aplicados.</td></tr>
+  {% endfor %}
+</table>
+{% endblock %}

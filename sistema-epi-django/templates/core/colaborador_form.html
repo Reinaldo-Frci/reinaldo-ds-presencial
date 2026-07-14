@@ -1,0 +1,14 @@
+{% extends 'core/base.html' %}
+{% block titulo %}{% if colaborador %}Editar colaborador{% else %}Novo colaborador{% endif %}{% endblock %}
+{% block conteudo %}
+<h1>{% if colaborador %}Editar colaborador — {{ colaborador.nome }}{% else %}Cadastro de colaborador{% endif %}</h1>
+<form method="post" class="painel" novalidate>
+  {% csrf_token %}
+  {% if form.non_field_errors %}<div class="erros-form">{{ form.non_field_errors }}</div>{% endif %}
+  {% include 'core/_form_campos.html' %}
+  <div class="acoes">
+    <a class="btn btn-secundario" href="{% url 'colaborador_lista' %}">Cancelar</a>
+    <button class="btn btn-primario" type="submit">Salvar colaborador</button>
+  </div>
+</form>
+{% endblock %}

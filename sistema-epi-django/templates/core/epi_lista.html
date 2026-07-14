@@ -1,0 +1,35 @@
+{% extends 'core/base.html' %}
+{% block titulo %}EPIs{% endblock %}
+{% block conteudo %}
+<h1>Equipamentos de Proteção Individual</h1>
+<div class="filtros">
+  <form method="get" class="filtros" style="margin:0;">
+    <input class="campo" type="text" name="q" value="{{ busca }}" placeholder="Buscar por nome ou nº do CA…">
+    <button class="btn btn-secundario" type="submit">Buscar</button>
+  </form>
+  <a class="btn btn-primario" style="margin-left:auto;" href="{% url 'epi_novo' %}">+ Novo EPI</a>
+</div>
+<table>
+  <tr><th>EPI</th><th>Categoria</th><th>CA</th><th>Validade CA</th><th>Estoque</th><th>Status</th><th>Ações</th></tr>
+  {% for e in epis %}
+  <tr>
+    <td>{{ e.nome }}{% if e.tamanho %} ({{ e.tamanho }}){% endif %}</td>
+    <td>{{ e.get_categoria_display }}</td>
+    <td>{{ e.ca_numero }}</td>
+    <td>{{ e.ca_validade|date:'d/m/Y' }}
+        {% if e.ca_vencido %} <span class="tag tag-alerta">vencido</span>
+        {% elif e.ca_a_vencer %} <span class="tag tag-aviso">a vencer</span>{% endif %}</td>
+    <td>{{ e.qtd_estoque }}{% if e.estoque_baixo %} <span class="tag tag-aviso">mín. {{ e.qtd_minima }}</span>{% endif %}</td>
+    <td>{% if e.ativo %}<span class="tag tag-ok">Ativo</span>{% else %}<span class="tag tag-neutro">Inativo</span>{% endif %}</td>
+    <td>
+      <a class="btn btn-secundario btn-mini" href="{% url 'epi_editar' e.pk %}">Editar</a>
+      <form method="post" action="{% url 'epi_toggle' e.pk %}" style="display:inline;">{% csrf_token %}
+        <button class="btn btn-secundario btn-mini" type="submit">{% if e.ativo %}Inativar{% else %}Reativar{% endif %}</button>
+      </form>
+    </td>
+  </tr>
+  {% empty %}
+  <tr><td colspan="7">Nenhum EPI cadastrado. <a href="{% url 'epi_novo' %}">Cadastrar o primeiro</a>.</td></tr>
+  {% endfor %}
+</table>
+{% endblock %}

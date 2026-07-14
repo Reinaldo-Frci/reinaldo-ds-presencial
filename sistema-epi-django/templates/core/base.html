@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{% block titulo %}Gestão de EPIs{% endblock %} · Construtora</title>
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+<header class="topbar">
+  <div class="marca"><span class="capacete">EPI</span> Gestão de EPIs — Construção Civil</div>
+  <div class="usuario-chip">
+    <span>{{ user.get_full_name|default:user.username }} · {{ user.get_perfil_display }}</span>
+    <form method="post" action="{% url 'logout' %}">{% csrf_token %}<button type="submit">Sair</button></form>
+  </div>
+</header>
+<div class="layout">
+  <nav class="menu">
+    {% with atual=request.resolver_match.url_name %}
+    <a href="{% url 'dashboard' %}" class="{% if atual == 'dashboard' %}ativo{% endif %}">Dashboard</a>
+    <a href="{% url 'colaborador_lista' %}" class="{% if 'colaborador' in atual %}ativo{% endif %}">Colaboradores</a>
+    <a href="{% url 'epi_lista' %}" class="{% if 'epi_' in atual %}ativo{% endif %}">EPIs</a>
+    <a href="{% url 'emprestimo_lista' %}" class="{% if 'emprestimo' in atual %}ativo{% endif %}">Empréstimos</a>
+    <a href="{% url 'relatorios' %}" class="{% if atual == 'relatorios' %}ativo{% endif %}">Relatórios</a>
+    {% if user.eh_admin %}
+    <a href="{% url 'usuario_lista' %}" class="{% if 'usuario' in atual %}ativo{% endif %}">Usuários</a>
+    {% endif %}
+    {% endwith %}
+  </nav>
+  <main class="conteudo">
+    {% if messages %}
+    <ul class="mensagens">
+      {% for m in messages %}<li class="{{ m.tags }}">{{ m }}</li>{% endfor %}
+    </ul>
+    {% endif %}
+    {% block conteudo %}{% endblock %}
+  </main>
+</div>
+</body>
+</html>

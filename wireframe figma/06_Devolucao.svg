@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="832" viewBox="0 0 1280 832">
+<rect width="1280" height="832" fill="#F4F3EF"/>
+<rect x="0" y="0" width="1280" height="56" rx="0" fill="#EDEDE9"/>
+<line x1="0" y1="56" x2="1280" y2="56" stroke="#9A9A9A" stroke-width="2"/>
+<circle cx="34" cy="28" r="14" fill="#FFFFFF" stroke="#2B2B2B" stroke-width="2"/>
+<text x="34" y="32" font-family="Arial" font-size="9" fill="#2B2B2B" font-weight="bold" text-anchor="middle">EPI</text>
+<text x="58" y="33" font-family="Arial" font-size="14" fill="#2B2B2B" font-weight="bold" text-anchor="start">Gestão de EPIs — Construção Civil</text>
+<rect x="1064" y="15" width="192" height="26" rx="13" fill="#FFFFFF" stroke="#9A9A9A" stroke-width="1"/>
+<text x="1160" y="32" font-family="Arial" font-size="11" fill="#555555" text-anchor="middle">Técnico de Segurança ▾</text>
+<rect x="0" y="56" width="200" height="776" rx="0" fill="#EFEFEA"/>
+<line x1="200" y1="56" x2="200" y2="832" stroke="#9A9A9A" stroke-width="1.5"/>
+<text x="20" y="105" font-family="Arial" font-size="13" fill="#2B2B2B" text-anchor="start">Dashboard</text>
+<text x="20" y="149" font-family="Arial" font-size="13" fill="#2B2B2B" text-anchor="start">Colaboradores</text>
+<text x="20" y="193" font-family="Arial" font-size="13" fill="#2B2B2B" text-anchor="start">EPIs</text>
+<rect x="0" y="212" width="200" height="40" rx="0" fill="#E0DFD8"/>
+<rect x="0" y="212" width="4" height="40" rx="0" fill="#2B2B2B"/>
+<text x="20" y="237" font-family="Arial" font-size="13" fill="#2B2B2B" font-weight="bold" text-anchor="start">Empréstimos</text>
+<text x="20" y="281" font-family="Arial" font-size="13" fill="#2B2B2B" text-anchor="start">Relatórios</text>
+<text x="20" y="325" font-family="Arial" font-size="13" fill="#2B2B2B" text-anchor="start">Usuários</text>
+<text x="224" y="96" font-family="Arial" font-size="18" fill="#2B2B2B" font-weight="bold" text-anchor="start">Empréstimos e devolução</text>
+<line x1="224" y1="108" x2="1256" y2="108" stroke="#D9D7D0" stroke-width="1"/>
+<rect x="224" y="124" width="320" height="34" rx="4" fill="#FFFFFF" stroke="#9A9A9A" stroke-width="1.5"/>
+<text x="234" y="146" font-family="Arial" font-size="12" fill="#999999" text-anchor="start">Buscar colaborador…</text>
+<rect x="560" y="124" width="170" height="34" rx="4" fill="#FFFFFF" stroke="#9A9A9A" stroke-width="1.5"/>
+<text x="570" y="146" font-family="Arial" font-size="12" fill="#999999" text-anchor="start">Status: todos</text>
+<text x="714" y="146" font-family="Arial" font-size="12" fill="#666666" text-anchor="start">▾</text>
+<rect x="1056" y="123" width="200" height="36" rx="5" fill="#4A4A4A"/>
+<text x="1156.0" y="145.5" font-family="Arial" font-size="13" fill="#FFFFFF" font-weight="bold" text-anchor="middle">+ Registrar empréstimo</text>
+<rect x="224" y="176" width="1032" height="132" rx="4" fill="#FFFFFF" stroke="#9A9A9A" stroke-width="1.5"/>
+<rect x="224" y="176" width="1032" height="30" rx="4" fill="#EDEDE9" stroke="#9A9A9A" stroke-width="1.5"/>
+<text x="234" y="196" font-family="Arial" font-size="10" fill="#555555" font-weight="bold" text-anchor="start">Nº</text>
+<text x="284" y="196" font-family="Arial" font-size="10" fill="#555555" font-weight="bold" text-anchor="start">COLABORADOR</text>
+<text x="524" y="196" font-family="Arial" font-size="10" fill="#555555" font-weight="bold" text-anchor="start">ITENS</text>
+<text x="594" y="196" font-family="Arial" font-size="10" fill="#555555" font-weight="bold" text-anchor="start">EMPRÉSTIMO</text>
+<text x="754" y="196" font-family="Arial" font-size="10" fill="#555555" font-weight="bold" text-anchor="start">PREV. DEVOLUÇÃO</text>
+<text x="914" y="196" font-family="Arial" font-size="10" fill="#555555" font-weight="bold" text-anchor="start">STATUS</text>
+<text x="1044" y="196" font-family="Arial" font-size="10" fill="#555555" font-weight="bold" text-anchor="start">AÇÕES</text>
+<line x1="224" y1="206" x2="1256" y2="206" stroke="#D9D7D0" stroke-width="1"/>
+<text x="234" y="228" font-family="Arial" font-size="12" fill="#2B2B2B" text-anchor="start">1</text>
+<text x="284" y="228" font-family="Arial" font-size="12" fill="#2B2B2B" text-anchor="start">Carlos Andrade</text>
+<text x="524" y="228" font-family="Arial" font-size="12" fill="#2B2B2B" text-anchor="start">2</text>
+<text x="594" y="228" font-family="Arial" font-size="12" fill="#2B2B2B" text-anchor="start">10/07/2026</text>
+<text x="754" y="228" font-family="Arial" font-size="12" fill="#2B2B2B" text-anchor="start">29/07/2026</text>
+<rect x="914" y="214" width="50" height="18" rx="9" fill="#FFFFFF" stroke="#9A9A9A" stroke-width="1"/>
+<text x="939.0" y="227" font-family="Arial" font-size="10" fill="#555555" text-anchor="middle">Ativo</text>
+<text x="1044" y="228" font-family="Arial" font-size="12" fill="#2B2B2B" text-anchor="start">Ficha · Devolução</text>
+<line x1="224" y1="240" x2="1256" y2="240" stroke="#D9D7D0" stroke-width="1"/>
+<text x="234" y="262" font-family="Arial" font-size="12" fill="#2B2B2B" text-anchor="start">2</text>
+<text x="284" y="262" font-family="Arial" font-size="12" fill="#2B2B2B" text-anchor="start">José Pereira</text>
+<text x="524" y="262" font-family="Arial" font-size="12" fill="#2B2B2B" text-anchor="start">1</text>
+<text x="594" y="262" font-family="Arial" font-size="12" fill="#2B2B2B" text-anchor="start">05/07/2026</text>
+<text x="754" y="262" font-family="Arial" font-size="12" fill="#2B2B2B" text-anchor="start">11/07/2026</text>
+<rect x="914" y="248" width="68" height="18" rx="9" fill="#FFFFFF" stroke="#9A9A9A" stroke-width="1"/>
+<text x="948.0" y="261" font-family="Arial" font-size="10" fill="#555555" text-anchor="middle">Atrasado</text>
+<text x="1044" y="262" font-family="Arial" font-size="12" fill="#2B2B2B" text-anchor="start">Ficha · Devolução</text>
+<line x1="224" y1="274" x2="1256" y2="274" stroke="#D9D7D0" stroke-width="1"/>
+<text x="234" y="296" font-family="Arial" font-size="12" fill="#2B2B2B" text-anchor="start">3</text>
+<text x="284" y="296" font-family="Arial" font-size="12" fill="#2B2B2B" text-anchor="start">Ricardo Santos</text>
+<text x="524" y="296" font-family="Arial" font-size="12" fill="#2B2B2B" text-anchor="start">1</text>
+<text x="594" y="296" font-family="Arial" font-size="12" fill="#2B2B2B" text-anchor="start">20/06/2026</text>
+<text x="754" y="296" font-family="Arial" font-size="12" fill="#2B2B2B" text-anchor="start">30/06/2026</text>
+<rect x="914" y="282" width="74" height="18" rx="9" fill="#FFFFFF" stroke="#9A9A9A" stroke-width="1"/>
+<text x="951.0" y="295" font-family="Arial" font-size="10" fill="#555555" text-anchor="middle">Devolvido</text>
+<text x="1044" y="296" font-family="Arial" font-size="12" fill="#2B2B2B" text-anchor="start">Ficha</text>
+<text x="224" y="350" font-family="Arial" font-size="14" fill="#2B2B2B" font-weight="bold" text-anchor="start">Registrar devolução — Empréstimo nº 1</text>
+<text x="224" y="370" font-family="Arial" font-size="11" fill="#888888" text-anchor="start">Itens em bom estado retornam ao estoque; danificados ou extraviados são registrados para reposição (RN03).</text>
+<rect x="224" y="384" width="1032" height="102" rx="4" fill="#FFFFFF" stroke="#9A9A9A" stroke-width="1.5"/>
+<rect x="224" y="384" width="1032" height="30" rx="4" fill="#EDEDE9" stroke="#9A9A9A" stroke-width="1.5"/>
+<text x="234" y="404" font-family="Arial" font-size="10" fill="#555555" font-weight="bold" text-anchor="start">EPI</text>
+<text x="664" y="404" font-family="Arial" font-size="10" fill="#555555" font-weight="bold" text-anchor="start">QTDE.</text>
+<text x="764" y="404" font-family="Arial" font-size="10" fill="#555555" font-weight="bold" text-anchor="start">CONDIÇÃO NA DEVOLUÇÃO</text>
+<line x1="224" y1="414" x2="1256" y2="414" stroke="#D9D7D0" stroke-width="1"/>
+<text x="234" y="436" font-family="Arial" font-size="12" fill="#2B2B2B" text-anchor="start">Capacete de segurança — CA 12345</text>
+<text x="664" y="436" font-family="Arial" font-size="12" fill="#2B2B2B" text-anchor="start">1</text>
+<rect x="764" y="419" width="478" height="24" rx="4" fill="#FFFFFF" stroke="#9A9A9A" stroke-width="1"/>
+<text x="772" y="435" font-family="Arial" font-size="11" fill="#999999" text-anchor="start">Bom estado / Danificado / Extraviado</text>
+<text x="1232" y="435" font-family="Arial" font-size="11" fill="#666666" text-anchor="start">▾</text>
+<line x1="224" y1="450" x2="1256" y2="450" stroke="#D9D7D0" stroke-width="1"/>
+<text x="234" y="472" font-family="Arial" font-size="12" fill="#2B2B2B" text-anchor="start">Botina de segurança (42) — CA 23456</text>
+<text x="664" y="472" font-family="Arial" font-size="12" fill="#2B2B2B" text-anchor="start">1</text>
+<rect x="764" y="455" width="478" height="24" rx="4" fill="#FFFFFF" stroke="#9A9A9A" stroke-width="1"/>
+<text x="772" y="471" font-family="Arial" font-size="11" fill="#999999" text-anchor="start">— não devolvido —</text>
+<text x="1232" y="471" font-family="Arial" font-size="11" fill="#666666" text-anchor="start">▾</text>
+<rect x="1056" y="520" width="200" height="36" rx="5" fill="#4A4A4A"/>
+<text x="1156.0" y="542.5" font-family="Arial" font-size="13" fill="#FFFFFF" font-weight="bold" text-anchor="middle">Confirmar devolução</text>
+<text x="224" y="816" font-family="Arial" font-size="11" fill="#888888" font-style="italic" text-anchor="start">Tela 06 — Devolução: registra a condição de cada item; devolução parcial é permitida.</text>
+</svg>

@@ -1,0 +1,98 @@
+<mxfile host="app.diagrams.net">
+  <diagram id="der-epi" name="DER - Sistema de EPIs">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="826" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="titulo" value="DER - Sistema de Gerenciamento de EPIs (Construção Civil)" style="text;html=1;fontSize=18;fontStyle=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="280" y="10" width="620" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Tabela: usuario -->
+        <mxCell id="tUsuario" value="usuario" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;collapsible=0;marginBottom=0;fillColor=#dae8fc;strokeColor=#6c8ebf;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="70" width="230" height="212" as="geometry" />
+        </mxCell>
+        <mxCell id="u1" value="PK  id_usuario : INT" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontStyle=4;html=1;" vertex="1" parent="tUsuario"><mxGeometry y="30" width="230" height="26" as="geometry" /></mxCell>
+        <mxCell id="u2" value="nome : VARCHAR(100)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;html=1;" vertex="1" parent="tUsuario"><mxGeometry y="56" width="230" height="26" as="geometry" /></mxCell>
+        <mxCell id="u3" value="email : VARCHAR(150) [UNIQUE]" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;html=1;" vertex="1" parent="tUsuario"><mxGeometry y="82" width="230" height="26" as="geometry" /></mxCell>
+        <mxCell id="u4" value="senha_hash : VARCHAR(255)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;html=1;" vertex="1" parent="tUsuario"><mxGeometry y="108" width="230" height="26" as="geometry" /></mxCell>
+        <mxCell id="u5" value="perfil : ENUM" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;html=1;" vertex="1" parent="tUsuario"><mxGeometry y="134" width="230" height="26" as="geometry" /></mxCell>
+        <mxCell id="u6" value="ativo : BOOLEAN" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;html=1;" vertex="1" parent="tUsuario"><mxGeometry y="160" width="230" height="26" as="geometry" /></mxCell>
+        <mxCell id="u7" value="criado_em : DATETIME" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;html=1;" vertex="1" parent="tUsuario"><mxGeometry y="186" width="230" height="26" as="geometry" /></mxCell>
+
+        <!-- Tabela: colaborador -->
+        <mxCell id="tColab" value="colaborador" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;collapsible=0;marginBottom=0;fillColor=#d5e8d4;strokeColor=#82b366;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="430" width="230" height="290" as="geometry" />
+        </mxCell>
+        <mxCell id="c1" value="PK  id_colaborador : INT" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontStyle=4;html=1;" vertex="1" parent="tColab"><mxGeometry y="30" width="230" height="26" as="geometry" /></mxCell>
+        <mxCell id="c2" value="matricula : VARCHAR(20) [UNIQUE]" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;html=1;" vertex="1" parent="tColab"><mxGeometry y="56" width="230" height="26" as="geometry" /></mxCell>
+        <mxCell id="c3" value="nome : VARCHAR(100)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;html=1;" vertex="1" parent="tColab"><mxGeometry y="82" width="230" height="26" as="geometry" /></mxCell>
+        <mxCell id="c4" value="cpf : CHAR(11) [UNIQUE]" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;html=1;" vertex="1" parent="tColab"><mxGeometry y="108" width="230" height="26" as="geometry" /></mxCell>
+        <mxCell id="c5" value="data_nascimento : DATE" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;html=1;" vertex="1" parent="tColab"><mxGeometry y="134" width="230" height="26" as="geometry" /></mxCell>
+        <mxCell id="c6" value="cargo : VARCHAR(60)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;html=1;" vertex="1" parent="tColab"><mxGeometry y="160" width="230" height="26" as="geometry" /></mxCell>
+        <mxCell id="c7" value="setor : VARCHAR(60)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;html=1;" vertex="1" parent="tColab"><mxGeometry y="186" width="230" height="26" as="geometry" /></mxCell>
+        <mxCell id="c8" value="telefone : VARCHAR(15)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;html=1;" vertex="1" parent="tColab"><mxGeometry y="212" width="230" height="26" as="geometry" /></mxCell>
+        <mxCell id="c9" value="email : VARCHAR(150)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;html=1;" vertex="1" parent="tColab"><mxGeometry y="238" width="230" height="26" as="geometry" /></mxCell>
+        <mxCell id="c10" value="ativo : BOOLEAN" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;html=1;" vertex="1" parent="tColab"><mxGeometry y="264" width="230" height="26" as="geometry" /></mxCell>
+
+        <!-- Tabela: emprestimo -->
+        <mxCell id="tEmp" value="emprestimo" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;collapsible=0;marginBottom=0;fillColor=#ffe6cc;strokeColor=#d79b00;html=1;" vertex="1" parent="1">
+          <mxGeometry x="450" y="300" width="260" height="212" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" value="PK  id_emprestimo : INT" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontStyle=4;html=1;" vertex="1" parent="tEmp"><mxGeometry y="30" width="260" height="26" as="geometry" /></mxCell>
+        <mxCell id="e2" value="FK  id_colaborador : INT" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontStyle=2;html=1;" vertex="1" parent="tEmp"><mxGeometry y="56" width="260" height="26" as="geometry" /></mxCell>
+        <mxCell id="e3" value="FK  id_usuario : INT" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontStyle=2;html=1;" vertex="1" parent="tEmp"><mxGeometry y="82" width="260" height="26" as="geometry" /></mxCell>
+        <mxCell id="e4" value="data_emprestimo : DATETIME" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;html=1;" vertex="1" parent="tEmp"><mxGeometry y="108" width="260" height="26" as="geometry" /></mxCell>
+        <mxCell id="e5" value="data_prevista_devolucao : DATE" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;html=1;" vertex="1" parent="tEmp"><mxGeometry y="134" width="260" height="26" as="geometry" /></mxCell>
+        <mxCell id="e6" value="status : ENUM (ATIVO/DEVOLVIDO/ATRASADO)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;html=1;" vertex="1" parent="tEmp"><mxGeometry y="160" width="260" height="26" as="geometry" /></mxCell>
+        <mxCell id="e7" value="observacao : VARCHAR(255)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;html=1;" vertex="1" parent="tEmp"><mxGeometry y="186" width="260" height="26" as="geometry" /></mxCell>
+
+        <!-- Tabela: item_emprestimo -->
+        <mxCell id="tItem" value="item_emprestimo" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;collapsible=0;marginBottom=0;fillColor=#fff2cc;strokeColor=#d6b656;html=1;" vertex="1" parent="1">
+          <mxGeometry x="850" y="300" width="260" height="186" as="geometry" />
+        </mxCell>
+        <mxCell id="i1" value="PK  id_item : INT" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontStyle=4;html=1;" vertex="1" parent="tItem"><mxGeometry y="30" width="260" height="26" as="geometry" /></mxCell>
+        <mxCell id="i2" value="FK  id_emprestimo : INT" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontStyle=2;html=1;" vertex="1" parent="tItem"><mxGeometry y="56" width="260" height="26" as="geometry" /></mxCell>
+        <mxCell id="i3" value="FK  id_epi : INT" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontStyle=2;html=1;" vertex="1" parent="tItem"><mxGeometry y="82" width="260" height="26" as="geometry" /></mxCell>
+        <mxCell id="i4" value="quantidade : INT" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;html=1;" vertex="1" parent="tItem"><mxGeometry y="108" width="260" height="26" as="geometry" /></mxCell>
+        <mxCell id="i5" value="data_devolucao : DATETIME" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;html=1;" vertex="1" parent="tItem"><mxGeometry y="134" width="260" height="26" as="geometry" /></mxCell>
+        <mxCell id="i6" value="condicao_devolucao : ENUM" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;html=1;" vertex="1" parent="tItem"><mxGeometry y="160" width="260" height="26" as="geometry" /></mxCell>
+
+        <!-- Tabela: epi -->
+        <mxCell id="tEpi" value="epi" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;collapsible=0;marginBottom=0;fillColor=#f8cecc;strokeColor=#b85450;html=1;" vertex="1" parent="1">
+          <mxGeometry x="850" y="560" width="260" height="290" as="geometry" />
+        </mxCell>
+        <mxCell id="p1" value="PK  id_epi : INT" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontStyle=4;html=1;" vertex="1" parent="tEpi"><mxGeometry y="30" width="260" height="26" as="geometry" /></mxCell>
+        <mxCell id="p2" value="nome : VARCHAR(100)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;html=1;" vertex="1" parent="tEpi"><mxGeometry y="56" width="260" height="26" as="geometry" /></mxCell>
+        <mxCell id="p3" value="descricao : VARCHAR(255)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;html=1;" vertex="1" parent="tEpi"><mxGeometry y="82" width="260" height="26" as="geometry" /></mxCell>
+        <mxCell id="p4" value="categoria : ENUM" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;html=1;" vertex="1" parent="tEpi"><mxGeometry y="108" width="260" height="26" as="geometry" /></mxCell>
+        <mxCell id="p5" value="ca_numero : VARCHAR(20)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;html=1;" vertex="1" parent="tEpi"><mxGeometry y="134" width="260" height="26" as="geometry" /></mxCell>
+        <mxCell id="p6" value="ca_validade : DATE" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;html=1;" vertex="1" parent="tEpi"><mxGeometry y="160" width="260" height="26" as="geometry" /></mxCell>
+        <mxCell id="p7" value="tamanho : VARCHAR(10)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;html=1;" vertex="1" parent="tEpi"><mxGeometry y="186" width="260" height="26" as="geometry" /></mxCell>
+        <mxCell id="p8" value="qtd_estoque : INT" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;html=1;" vertex="1" parent="tEpi"><mxGeometry y="212" width="260" height="26" as="geometry" /></mxCell>
+        <mxCell id="p9" value="qtd_minima : INT" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;html=1;" vertex="1" parent="tEpi"><mxGeometry y="238" width="260" height="26" as="geometry" /></mxCell>
+        <mxCell id="p10" value="ativo : BOOLEAN" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;html=1;" vertex="1" parent="tEpi"><mxGeometry y="264" width="260" height="26" as="geometry" /></mxCell>
+
+        <!-- Relacionamentos (notação pé-de-galinha) -->
+        <mxCell id="rel1" value="registra" style="edgeStyle=entityRelationEdgeStyle;html=1;startArrow=ERone;startFill=0;endArrow=ERmany;endFill=0;fontSize=12;" edge="1" parent="1" source="tUsuario" target="tEmp">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel2" value="realiza" style="edgeStyle=entityRelationEdgeStyle;html=1;startArrow=ERone;startFill=0;endArrow=ERmany;endFill=0;fontSize=12;" edge="1" parent="1" source="tColab" target="tEmp">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel3" value="possui" style="edgeStyle=entityRelationEdgeStyle;html=1;startArrow=ERone;startFill=0;endArrow=ERmany;endFill=0;fontSize=12;" edge="1" parent="1" source="tEmp" target="tItem">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel4" value="é referenciado em" style="edgeStyle=entityRelationEdgeStyle;html=1;startArrow=ERone;startFill=0;endArrow=ERmany;endFill=0;fontSize=12;" edge="1" parent="1" source="tEpi" target="tItem">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Legenda -->
+        <mxCell id="legenda" value="Cardinalidades: usuario (1) — (N) emprestimo | colaborador (1) — (N) emprestimo | emprestimo (1) — (N) item_emprestimo | epi (1) — (N) item_emprestimo" style="text;html=1;fontSize=11;align=left;fontStyle=2;" vertex="1" parent="1">
+          <mxGeometry x="40" y="780" width="760" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

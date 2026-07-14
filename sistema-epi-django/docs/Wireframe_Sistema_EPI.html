@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wireframe — Sistema de Gerenciamento de EPIs</title>
+<style>
+  :root{
+    --ink:#2b2b2b; --line:#9a9a9a; --line-soft:#c8c8c8;
+    --paper:#f2f2ef; --panel:#ffffff; --fill:#e4e4e0; --accent:#4a4a4a;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:'Segoe UI', Arial, sans-serif; background:var(--paper); color:var(--ink); padding:24px;}
+  h1{font-size:20px; margin-bottom:4px;}
+  .sub{font-size:13px; color:#666; margin-bottom:20px;}
+  /* navegação entre telas do wireframe */
+  .tabs{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:20px;}
+  .tabs button{
+    border:1.5px solid var(--line); background:var(--panel); padding:8px 14px;
+    font-size:13px; cursor:pointer; border-radius:4px; color:var(--ink);
+  }
+  .tabs button.active{background:var(--accent); color:#fff; border-color:var(--accent);}
+  .tabs button:focus-visible{outline:2px solid var(--ink); outline-offset:2px;}
+
+  .screen{display:none; border:2px solid var(--line); background:var(--panel); max-width:1080px;}
+  .screen.active{display:block;}
+  .annot{font-size:11px; color:#777; font-style:italic; padding:6px 16px; border-top:1px dashed var(--line-soft);}
+
+  /* moldura de app */
+  .appbar{display:flex; justify-content:space-between; align-items:center; padding:12px 16px; border-bottom:2px solid var(--line); background:var(--fill);}
+  .logo{display:flex; align-items:center; gap:8px; font-weight:700; font-size:14px;}
+  .logo .mark{width:26px; height:26px; border:2px solid var(--ink); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:11px;}
+  .userchip{font-size:12px; border:1.5px solid var(--line); border-radius:16px; padding:4px 12px; background:#fff;}
+  .layout{display:flex; min-height:520px;}
+  .sidenav{width:190px; border-right:2px solid var(--line); padding:12px 0; background:#fafaf8;}
+  .sidenav a{display:block; padding:10px 16px; font-size:13px; color:var(--ink); text-decoration:none; border-left:4px solid transparent;}
+  .sidenav a.sel{border-left-color:var(--ink); background:var(--fill); font-weight:600;}
+  .content{flex:1; padding:20px;}
+  .content h2{font-size:16px; margin-bottom:14px; padding-bottom:8px; border-bottom:1px solid var(--line-soft);}
+
+  /* componentes de wireframe */
+  .row{display:flex; gap:14px; flex-wrap:wrap; margin-bottom:14px;}
+  .field{flex:1; min-width:180px;}
+  .field label{display:block; font-size:12px; font-weight:600; margin-bottom:4px;}
+  .field label .req{color:#8a1f1f;}
+  .box{border:1.5px solid var(--line); border-radius:4px; height:34px; background:#fff; display:flex; align-items:center; padding:0 10px; font-size:12px; color:#999;}
+  .box.select::after{content:"▾"; margin-left:auto; color:#666;}
+  .btn{border:1.5px solid var(--ink); background:var(--ink); color:#fff; padding:9px 18px; font-size:13px; border-radius:4px; cursor:pointer;}
+  .btn.ghost{background:#fff; color:var(--ink);}
+  .actions{display:flex; gap:10px; justify-content:flex-end; margin-top:8px;}
+  table{width:100%; border-collapse:collapse; font-size:12px; margin-top:8px;}
+  th,td{border:1px solid var(--line-soft); padding:8px 10px; text-align:left;}
+  th{background:var(--fill); font-size:11px; text-transform:uppercase; letter-spacing:.04em;}
+  .tag{display:inline-block; border:1px solid var(--line); border-radius:12px; padding:2px 10px; font-size:11px; background:#fff;}
+  .toolbar{display:flex; gap:10px; align-items:center; margin-bottom:12px;}
+  .toolbar .box{flex:1; max-width:320px;}
+  .cards{display:flex; gap:14px; flex-wrap:wrap; margin-bottom:18px;}
+  .card{flex:1; min-width:170px; border:1.5px solid var(--line); border-radius:6px; padding:14px; background:#fff;}
+  .card .num{font-size:26px; font-weight:700;}
+  .card .lbl{font-size:12px; color:#666;}
+  .card.alert{border-style:dashed;}
+  .placeholder-chart{border:1.5px dashed var(--line); border-radius:6px; height:150px; display:flex; align-items:center; justify-content:center; color:#999; font-size:12px; background:repeating-linear-gradient(45deg,#fff,#fff 12px,#f7f7f4 12px,#f7f7f4 24px);}
+
+  /* login */
+  .login-wrap{display:flex; align-items:center; justify-content:center; min-height:520px; background:var(--paper);}
+  .login-card{width:340px; border:2px solid var(--line); border-radius:6px; background:#fff; padding:28px;}
+  .login-card .logo{justify-content:center; margin-bottom:18px;}
+</style>
+</head>
+<body>
+
+<h1>Wireframe — Sistema de Gerenciamento de EPIs</h1>
+<p class="sub">Construção civil · baixa fidelidade · clique nas abas para navegar entre as telas</p>
+
+<div class="tabs" role="tablist">
+  <button class="active" data-t="login">1. Login</button>
+  <button data-t="dash">2. Dashboard</button>
+  <button data-t="colab">3. Cadastro de Colaboradores</button>
+  <button data-t="epi">4. Cadastro de EPIs</button>
+  <button data-t="emp">5. Registrar Empréstimo</button>
+  <button data-t="dev">6. Devolução</button>
+  <button data-t="user">7. Usuários do Sistema</button>
+</div>
+
+<!-- ============ 1. LOGIN ============ -->
+<section class="screen active" id="login">
+  <div class="login-wrap">
+    <div class="login-card">
+      <div class="logo"><span class="mark">EPI</span> Sistema de Gestão de EPIs</div>
+      <div class="field" style="margin-bottom:12px;">
+        <label>E-mail</label><div class="box">usuario@empresa.com.br</div>
+      </div>
+      <div class="field" style="margin-bottom:16px;">
+        <label>Senha</label><div class="box">••••••••</div>
+      </div>
+      <button class="btn" style="width:100%;">Entrar</button>
+      <p style="font-size:11px; color:#888; text-align:center; margin-top:12px;">Esqueci minha senha</p>
+    </div>
+  </div>
+  <p class="annot">Autenticação obrigatória. Mensagens de erro claras em caso de credenciais inválidas (heurística de prevenção de erros).</p>
+</section>
+
+<!-- ============ 2. DASHBOARD ============ -->
+<section class="screen" id="dash">
+  <div class="appbar">
+    <div class="logo"><span class="mark">EPI</span> Gestão de EPIs</div>
+    <span class="userchip">Técnico de Segurança ▾</span>
+  </div>
+  <div class="layout">
+    <nav class="sidenav">
+      <a class="sel" href="#">Dashboard</a><a href="#">Colaboradores</a><a href="#">EPIs</a>
+      <a href="#">Empréstimos</a><a href="#">Relatórios</a><a href="#">Usuários</a>
+    </nav>
+    <main class="content">
+      <h2>Visão geral</h2>
+      <div class="cards">
+        <div class="card"><div class="num">38</div><div class="lbl">Empréstimos ativos</div></div>
+        <div class="card alert"><div class="num">5</div><div class="lbl">Devoluções atrasadas</div></div>
+        <div class="card alert"><div class="num">2</div><div class="lbl">CAs próximos do vencimento</div></div>
+        <div class="card alert"><div class="num">3</div><div class="lbl">EPIs abaixo do estoque mínimo</div></div>
+      </div>
+      <div class="placeholder-chart">[ Gráfico: empréstimos por setor / últimos 30 dias ]</div>
+    </main>
+  </div>
+  <p class="annot">Painel com indicadores e alertas visíveis logo após o login (visibilidade do status do sistema).</p>
+</section>
+
+<!-- ============ 3. COLABORADORES ============ -->
+<section class="screen" id="colab">
+  <div class="appbar">
+    <div class="logo"><span class="mark">EPI</span> Gestão de EPIs</div>
+    <span class="userchip">Técnico de Segurança ▾</span>
+  </div>
+  <div class="layout">
+    <nav class="sidenav">
+      <a href="#">Dashboard</a><a class="sel" href="#">Colaboradores</a><a href="#">EPIs</a>
+      <a href="#">Empréstimos</a><a href="#">Relatórios</a><a href="#">Usuários</a>
+    </nav>
+    <main class="content">
+      <h2>Cadastro de colaborador</h2>
+      <div class="row">
+        <div class="field"><label>Matrícula <span class="req">*</span></label><div class="box">Ex.: 002451</div></div>
+        <div class="field" style="flex:2;"><label>Nome completo <span class="req">*</span></label><div class="box">Nome do colaborador</div></div>
+      </div>
+      <div class="row">
+        <div class="field"><label>CPF <span class="req">*</span></label><div class="box">000.000.000-00</div></div>
+        <div class="field"><label>Data de nascimento</label><div class="box">dd/mm/aaaa</div></div>
+        <div class="field"><label>Telefone</label><div class="box">(00) 00000-0000</div></div>
+      </div>
+      <div class="row">
+        <div class="field"><label>Cargo <span class="req">*</span></label><div class="box select">Selecione</div></div>
+        <div class="field"><label>Setor <span class="req">*</span></label><div class="box select">Alvenaria / Estrutura / Acabamento / Elétrica...</div></div>
+        <div class="field"><label>E-mail</label><div class="box">email@exemplo.com</div></div>
+      </div>
+      <div class="actions">
+        <button class="btn ghost">Cancelar</button>
+        <button class="btn">Salvar colaborador</button>
+      </div>
+
+      <h2 style="margin-top:24px;">Colaboradores cadastrados</h2>
+      <div class="toolbar">
+        <div class="box">Buscar por nome ou matrícula…</div>
+        <div class="box select" style="width:160px;">Setor: todos</div>
+      </div>
+      <table>
+        <tr><th>Matrícula</th><th>Nome</th><th>Setor</th><th>Cargo</th><th>Status</th><th>Ações</th></tr>
+        <tr><td>002451</td><td>Carlos Andrade</td><td>Estrutura</td><td>Pedreiro</td><td><span class="tag">Ativo</span></td><td>Editar · Inativar</td></tr>
+        <tr><td>002452</td><td>José Pereira</td><td>Alvenaria</td><td>Servente</td><td><span class="tag">Ativo</span></td><td>Editar · Inativar</td></tr>
+      </table>
+    </main>
+  </div>
+  <p class="annot">Campos obrigatórios sinalizados com *. Validação de CPF e matrícula únicos. Esta tela é a base da Etapa 2 do desafio.</p>
+</section>
+
+<!-- ============ 4. EPIs ============ -->
+<section class="screen" id="epi">
+  <div class="appbar">
+    <div class="logo"><span class="mark">EPI</span> Gestão de EPIs</div>
+    <span class="userchip">Técnico de Segurança ▾</span>
+  </div>
+  <div class="layout">
+    <nav class="sidenav">
+      <a href="#">Dashboard</a><a href="#">Colaboradores</a><a class="sel" href="#">EPIs</a>
+      <a href="#">Empréstimos</a><a href="#">Relatórios</a><a href="#">Usuários</a>
+    </nav>
+    <main class="content">
+      <h2>Cadastro de EPI</h2>
+      <div class="row">
+        <div class="field" style="flex:2;"><label>Nome do EPI <span class="req">*</span></label><div class="box">Ex.: Capacete de segurança com jugular</div></div>
+        <div class="field"><label>Categoria <span class="req">*</span></label><div class="box select">Proteção da cabeça</div></div>
+      </div>
+      <div class="row">
+        <div class="field"><label>Nº do CA <span class="req">*</span></label><div class="box">CA 12345</div></div>
+        <div class="field"><label>Validade do CA <span class="req">*</span></label><div class="box">dd/mm/aaaa</div></div>
+        <div class="field"><label>Tamanho</label><div class="box select">Único / P / M / G</div></div>
+      </div>
+      <div class="row">
+        <div class="field"><label>Qtde. em estoque <span class="req">*</span></label><div class="box">0</div></div>
+        <div class="field"><label>Estoque mínimo <span class="req">*</span></label><div class="box">5</div></div>
+        <div class="field" style="flex:2;"><label>Descrição</label><div class="box">Descrição breve do equipamento</div></div>
+      </div>
+      <div class="actions">
+        <button class="btn ghost">Cancelar</button>
+        <button class="btn">Salvar EPI</button>
+      </div>
+
+      <h2 style="margin-top:24px;">EPIs cadastrados</h2>
+      <table>
+        <tr><th>EPI</th><th>Categoria</th><th>CA</th><th>Validade CA</th><th>Estoque</th><th>Ações</th></tr>
+        <tr><td>Capacete de segurança com jugular</td><td>Cabeça</td><td>CA 12345</td><td>10/05/2027</td><td>90</td><td>Editar</td></tr>
+        <tr><td>Cinto tipo paraquedista</td><td>Trabalho em altura</td><td>CA 34567</td><td>01/09/2026 ⚠</td><td>25</td><td>Editar</td></tr>
+      </table>
+    </main>
+  </div>
+  <p class="annot">O nº do CA e a validade são obrigatórios (NR-6). EPIs com CA vencido são bloqueados para empréstimo e destacados na lista.</p>
+</section>
+
+<!-- ============ 5. EMPRÉSTIMO ============ -->
+<section class="screen" id="emp">
+  <div class="appbar">
+    <div class="logo"><span class="mark">EPI</span> Gestão de EPIs</div>
+    <span class="userchip">Técnico de Segurança ▾</span>
+  </div>
+  <div class="layout">
+    <nav class="sidenav">
+      <a href="#">Dashboard</a><a href="#">Colaboradores</a><a href="#">EPIs</a>
+      <a class="sel" href="#">Empréstimos</a><a href="#">Relatórios</a><a href="#">Usuários</a>
+    </nav>
+    <main class="content">
+      <h2>Registrar empréstimo</h2>
+      <div class="row">
+        <div class="field" style="flex:2;"><label>Colaborador <span class="req">*</span></label><div class="box select">Buscar por nome ou matrícula…</div></div>
+        <div class="field"><label>Data prevista de devolução <span class="req">*</span></label><div class="box">dd/mm/aaaa</div></div>
+      </div>
+      <div class="row">
+        <div class="field" style="flex:2;"><label>EPI <span class="req">*</span></label><div class="box select">Selecionar EPI disponível…</div></div>
+        <div class="field"><label>Quantidade <span class="req">*</span></label><div class="box">1</div></div>
+        <div class="field" style="align-self:flex-end;"><button class="btn ghost" style="width:100%;">+ Adicionar item</button></div>
+      </div>
+      <table>
+        <tr><th>EPI</th><th>CA</th><th>Qtde.</th><th>Disponível</th><th></th></tr>
+        <tr><td>Capacete de segurança com jugular</td><td>CA 12345</td><td>1</td><td>90</td><td>Remover</td></tr>
+        <tr><td>Botina de segurança com biqueira (42)</td><td>CA 23456</td><td>1</td><td>60</td><td>Remover</td></tr>
+      </table>
+      <div class="actions" style="margin-top:16px;">
+        <button class="btn ghost">Cancelar</button>
+        <button class="btn">Confirmar empréstimo e emitir ficha</button>
+      </div>
+    </main>
+  </div>
+  <p class="annot">O sistema valida estoque disponível e CA vigente antes de confirmar. Ao confirmar, gera a ficha de entrega de EPI (NR-6) e baixa o estoque.</p>
+</section>
+
+<!-- ============ 6. DEVOLUÇÃO ============ -->
+<section class="screen" id="dev">
+  <div class="appbar">
+    <div class="logo"><span class="mark">EPI</span> Gestão de EPIs</div>
+    <span class="userchip">Técnico de Segurança ▾</span>
+  </div>
+  <div class="layout">
+    <nav class="sidenav">
+      <a href="#">Dashboard</a><a href="#">Colaboradores</a><a href="#">EPIs</a>
+      <a class="sel" href="#">Empréstimos</a><a href="#">Relatórios</a><a href="#">Usuários</a>
+    </nav>
+    <main class="content">
+      <h2>Empréstimos ativos / devolução</h2>
+      <div class="toolbar">
+        <div class="box">Buscar colaborador…</div>
+        <div class="box select" style="width:170px;">Status: todos</div>
+      </div>
+      <table>
+        <tr><th>Nº</th><th>Colaborador</th><th>Itens</th><th>Empréstimo</th><th>Prev. devolução</th><th>Status</th><th>Ações</th></tr>
+        <tr><td>1042</td><td>Carlos Andrade</td><td>2</td><td>01/07/2026</td><td>15/07/2026</td><td><span class="tag">Ativo</span></td><td><button class="btn ghost" style="padding:4px 10px;font-size:11px;">Registrar devolução</button></td></tr>
+        <tr><td>1038</td><td>José Pereira</td><td>1</td><td>20/06/2026</td><td>05/07/2026</td><td><span class="tag">⚠ Atrasado</span></td><td><button class="btn ghost" style="padding:4px 10px;font-size:11px;">Registrar devolução</button></td></tr>
+      </table>
+      <h2 style="margin-top:24px;">Registrar devolução — Empréstimo nº 1042</h2>
+      <table>
+        <tr><th>EPI</th><th>Qtde.</th><th>Condição na devolução</th></tr>
+        <tr><td>Capacete de segurança com jugular</td><td>1</td><td><div class="box select" style="height:28px;">Bom estado / Danificado / Extraviado</div></td></tr>
+      </table>
+      <div class="actions" style="margin-top:16px;">
+        <button class="btn">Confirmar devolução</button>
+      </div>
+    </main>
+  </div>
+  <p class="annot">Devoluções em bom estado retornam ao estoque; itens danificados/extraviados são registrados para controle e reposição.</p>
+</section>
+
+<!-- ============ 7. USUÁRIOS ============ -->
+<section class="screen" id="user">
+  <div class="appbar">
+    <div class="logo"><span class="mark">EPI</span> Gestão de EPIs</div>
+    <span class="userchip">Administrador ▾</span>
+  </div>
+  <div class="layout">
+    <nav class="sidenav">
+      <a href="#">Dashboard</a><a href="#">Colaboradores</a><a href="#">EPIs</a>
+      <a href="#">Empréstimos</a><a href="#">Relatórios</a><a class="sel" href="#">Usuários</a>
+    </nav>
+    <main class="content">
+      <h2>Cadastro de usuário do sistema</h2>
+      <div class="row">
+        <div class="field" style="flex:2;"><label>Nome <span class="req">*</span></label><div class="box">Nome do usuário</div></div>
+        <div class="field"><label>Perfil <span class="req">*</span></label><div class="box select">Administrador / Técnico / Almoxarife</div></div>
+      </div>
+      <div class="row">
+        <div class="field"><label>E-mail <span class="req">*</span></label><div class="box">email@empresa.com.br</div></div>
+        <div class="field"><label>Senha <span class="req">*</span></label><div class="box">••••••••</div></div>
+        <div class="field"><label>Confirmar senha <span class="req">*</span></label><div class="box">••••••••</div></div>
+      </div>
+      <div class="actions">
+        <button class="btn ghost">Cancelar</button>
+        <button class="btn">Salvar usuário</button>
+      </div>
+      <h2 style="margin-top:24px;">Usuários cadastrados</h2>
+      <table>
+        <tr><th>Nome</th><th>E-mail</th><th>Perfil</th><th>Status</th><th>Ações</th></tr>
+        <tr><td>Ana Lima</td><td>ana@empresa.com.br</td><td>Técnico de Segurança</td><td><span class="tag">Ativo</span></td><td>Editar · Inativar</td></tr>
+      </table>
+    </main>
+  </div>
+  <p class="annot">Tela restrita ao perfil Administrador (controle de acesso por perfil).</p>
+</section>
+
+<script>
+  const tabs = document.querySelectorAll('.tabs button');
+  tabs.forEach(b => b.addEventListener('click', () => {
+    tabs.forEach(x => x.classList.remove('active'));
+    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+    b.classList.add('active');
+    document.getElementById(b.dataset.t).classList.add('active');
+  }));
+</script>
+</body>
+</html>

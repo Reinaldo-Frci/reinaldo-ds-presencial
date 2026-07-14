@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="832" viewBox="0 0 1280 832">
+<rect width="1280" height="832" fill="#F4F3EF"/>
+<rect x="0" y="0" width="1280" height="56" rx="0" fill="#EDEDE9"/>
+<line x1="0" y1="56" x2="1280" y2="56" stroke="#9A9A9A" stroke-width="2"/>
+<circle cx="34" cy="28" r="14" fill="#FFFFFF" stroke="#2B2B2B" stroke-width="2"/>
+<text x="34" y="32" font-family="Arial" font-size="9" fill="#2B2B2B" font-weight="bold" text-anchor="middle">EPI</text>
+<text x="58" y="33" font-family="Arial" font-size="14" fill="#2B2B2B" font-weight="bold" text-anchor="start">Gestão de EPIs — Construção Civil</text>
+<rect x="1064" y="15" width="192" height="26" rx="13" fill="#FFFFFF" stroke="#9A9A9A" stroke-width="1"/>
+<text x="1160" y="32" font-family="Arial" font-size="11" fill="#555555" text-anchor="middle">Administrador ▾</text>
+<rect x="0" y="56" width="200" height="776" rx="0" fill="#EFEFEA"/>
+<line x1="200" y1="56" x2="200" y2="832" stroke="#9A9A9A" stroke-width="1.5"/>
+<text x="20" y="105" font-family="Arial" font-size="13" fill="#2B2B2B" text-anchor="start">Dashboard</text>
+<text x="20" y="149" font-family="Arial" font-size="13" fill="#2B2B2B" text-anchor="start">Colaboradores</text>
+<text x="20" y="193" font-family="Arial" font-size="13" fill="#2B2B2B" text-anchor="start">EPIs</text>
+<text x="20" y="237" font-family="Arial" font-size="13" fill="#2B2B2B" text-anchor="start">Empréstimos</text>
+<text x="20" y="281" font-family="Arial" font-size="13" fill="#2B2B2B" text-anchor="start">Relatórios</text>
+<rect x="0" y="300" width="200" height="40" rx="0" fill="#E0DFD8"/>
+<rect x="0" y="300" width="4" height="40" rx="0" fill="#2B2B2B"/>
+<text x="20" y="325" font-family="Arial" font-size="13" fill="#2B2B2B" font-weight="bold" text-anchor="start">Usuários</text>
+<text x="224" y="96" font-family="Arial" font-size="18" fill="#2B2B2B" font-weight="bold" text-anchor="start">Cadastro de usuário do sistema</text>
+<line x1="224" y1="108" x2="1256" y2="108" stroke="#D9D7D0" stroke-width="1"/>
+<text x="224" y="134" font-family="Arial" font-size="12" fill="#2B2B2B" font-weight="bold" text-anchor="start">Nome *</text>
+<rect x="224" y="140" width="400" height="34" rx="4" fill="#FFFFFF" stroke="#9A9A9A" stroke-width="1.5"/>
+<text x="234" y="162" font-family="Arial" font-size="12" fill="#999999" text-anchor="start">Nome do usuário</text>
+<text x="640" y="134" font-family="Arial" font-size="12" fill="#2B2B2B" font-weight="bold" text-anchor="start">Perfil de acesso *</text>
+<rect x="640" y="140" width="300" height="34" rx="4" fill="#FFFFFF" stroke="#9A9A9A" stroke-width="1.5"/>
+<text x="650" y="162" font-family="Arial" font-size="12" fill="#999999" text-anchor="start">Administrador / Técnico / Almoxarife</text>
+<text x="924" y="162" font-family="Arial" font-size="12" fill="#666666" text-anchor="start">▾</text>
+<text x="956" y="134" font-family="Arial" font-size="12" fill="#2B2B2B" font-weight="bold" text-anchor="start">E-mail *</text>
+<rect x="956" y="140" width="300" height="34" rx="4" fill="#FFFFFF" stroke="#9A9A9A" stroke-width="1.5"/>
+<text x="966" y="162" font-family="Arial" font-size="12" fill="#999999" text-anchor="start">email@construtora.com.br</text>
+<text x="224" y="204" font-family="Arial" font-size="12" fill="#2B2B2B" font-weight="bold" text-anchor="start">Usuário (login) *</text>
+<rect x="224" y="210" width="300" height="34" rx="4" fill="#FFFFFF" stroke="#9A9A9A" stroke-width="1.5"/>
+<text x="234" y="232" font-family="Arial" font-size="12" fill="#999999" text-anchor="start">nome.sobrenome</text>
+<text x="540" y="204" font-family="Arial" font-size="12" fill="#2B2B2B" font-weight="bold" text-anchor="start">Senha *</text>
+<rect x="540" y="210" width="220" height="34" rx="4" fill="#FFFFFF" stroke="#9A9A9A" stroke-width="1.5"/>
+<text x="550" y="232" font-family="Arial" font-size="12" fill="#999999" text-anchor="start">••••••••</text>
+<text x="776" y="204" font-family="Arial" font-size="12" fill="#2B2B2B" font-weight="bold" text-anchor="start">Confirmar senha *</text>
+<rect x="776" y="210" width="220" height="34" rx="4" fill="#FFFFFF" stroke="#9A9A9A" stroke-width="1.5"/>
+<text x="786" y="232" font-family="Arial" font-size="12" fill="#999999" text-anchor="start">••••••••</text>
+<rect x="940" y="278" width="140" height="36" rx="5" fill="#FFFFFF" stroke="#4A4A4A" stroke-width="1.5"/>
+<text x="1010.0" y="300.5" font-family="Arial" font-size="13" fill="#2B2B2B" text-anchor="middle">Cancelar</text>
+<rect x="1096" y="278" width="160" height="36" rx="5" fill="#4A4A4A"/>
+<text x="1176.0" y="300.5" font-family="Arial" font-size="13" fill="#FFFFFF" font-weight="bold" text-anchor="middle">Salvar usuário</text>
+<text x="224" y="366" font-family="Arial" font-size="14" fill="#2B2B2B" font-weight="bold" text-anchor="start">Usuários cadastrados</text>
+<rect x="224" y="380" width="1032" height="132" rx="4" fill="#FFFFFF" stroke="#9A9A9A" stroke-width="1.5"/>
+<rect x="224" y="380" width="1032" height="30" rx="4" fill="#EDEDE9" stroke="#9A9A9A" stroke-width="1.5"/>
+<text x="234" y="400" font-family="Arial" font-size="10" fill="#555555" font-weight="bold" text-anchor="start">NOME</text>
+<text x="474" y="400" font-family="Arial" font-size="10" fill="#555555" font-weight="bold" text-anchor="start">USUÁRIO</text>
+<text x="654" y="400" font-family="Arial" font-size="10" fill="#555555" font-weight="bold" text-anchor="start">E-MAIL</text>
+<text x="914" y="400" font-family="Arial" font-size="10" fill="#555555" font-weight="bold" text-anchor="start">PERFIL</text>
+<text x="1134" y="400" font-family="Arial" font-size="10" fill="#555555" font-weight="bold" text-anchor="start">STATUS</text>
+<line x1="224" y1="410" x2="1256" y2="410" stroke="#D9D7D0" stroke-width="1"/>
+<text x="234" y="432" font-family="Arial" font-size="12" fill="#2B2B2B" text-anchor="start">Administrador</text>
+<text x="474" y="432" font-family="Arial" font-size="12" fill="#2B2B2B" text-anchor="start">admin</text>
+<text x="654" y="432" font-family="Arial" font-size="12" fill="#2B2B2B" text-anchor="start">admin@construtora.com.br</text>
+<text x="914" y="432" font-family="Arial" font-size="12" fill="#2B2B2B" text-anchor="start">Administrador</text>
+<rect x="1134" y="418" width="50" height="18" rx="9" fill="#FFFFFF" stroke="#9A9A9A" stroke-width="1"/>
+<text x="1159.0" y="431" font-family="Arial" font-size="10" fill="#555555" text-anchor="middle">Ativo</text>
+<line x1="224" y1="444" x2="1256" y2="444" stroke="#D9D7D0" stroke-width="1"/>
+<text x="234" y="466" font-family="Arial" font-size="12" fill="#2B2B2B" text-anchor="start">Ana Lima</text>
+<text x="474" y="466" font-family="Arial" font-size="12" fill="#2B2B2B" text-anchor="start">tecnico</text>
+<text x="654" y="466" font-family="Arial" font-size="12" fill="#2B2B2B" text-anchor="start">tecnico@construtora.com.br</text>
+<text x="914" y="466" font-family="Arial" font-size="12" fill="#2B2B2B" text-anchor="start">Técnico de Segurança</text>
+<rect x="1134" y="452" width="50" height="18" rx="9" fill="#FFFFFF" stroke="#9A9A9A" stroke-width="1"/>
+<text x="1159.0" y="465" font-family="Arial" font-size="10" fill="#555555" text-anchor="middle">Ativo</text>
+<line x1="224" y1="478" x2="1256" y2="478" stroke="#D9D7D0" stroke-width="1"/>
+<text x="234" y="500" font-family="Arial" font-size="12" fill="#2B2B2B" text-anchor="start">Paulo Souza</text>
+<text x="474" y="500" font-family="Arial" font-size="12" fill="#2B2B2B" text-anchor="start">almoxarife</text>
+<text x="654" y="500" font-family="Arial" font-size="12" fill="#2B2B2B" text-anchor="start">—</text>
+<text x="914" y="500" font-family="Arial" font-size="12" fill="#2B2B2B" text-anchor="start">Almoxarife</text>
+<rect x="1134" y="486" width="50" height="18" rx="9" fill="#FFFFFF" stroke="#9A9A9A" stroke-width="1"/>
+<text x="1159.0" y="499" font-family="Arial" font-size="10" fill="#555555" text-anchor="middle">Ativo</text>
+<text x="224" y="816" font-family="Arial" font-size="11" fill="#888888" font-style="italic" text-anchor="start">Tela 07 — Usuários: acesso restrito ao perfil Administrador (controle de acesso, RNF02).</text>
+</svg>

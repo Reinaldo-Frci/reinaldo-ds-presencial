@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="832" viewBox="0 0 1280 832">
+<rect width="1280" height="832" fill="#F4F3EF"/>
+<rect x="0" y="0" width="1280" height="56" rx="0" fill="#EDEDE9"/>
+<line x1="0" y1="56" x2="1280" y2="56" stroke="#9A9A9A" stroke-width="2"/>
+<circle cx="34" cy="28" r="14" fill="#FFFFFF" stroke="#2B2B2B" stroke-width="2"/>
+<text x="34" y="32" font-family="Arial" font-size="9" fill="#2B2B2B" font-weight="bold" text-anchor="middle">EPI</text>
+<text x="58" y="33" font-family="Arial" font-size="14" fill="#2B2B2B" font-weight="bold" text-anchor="start">Gestão de EPIs — Construção Civil</text>
+<rect x="1064" y="15" width="192" height="26" rx="13" fill="#FFFFFF" stroke="#9A9A9A" stroke-width="1"/>
+<text x="1160" y="32" font-family="Arial" font-size="11" fill="#555555" text-anchor="middle">Técnico de Segurança ▾</text>
+<rect x="0" y="56" width="200" height="776" rx="0" fill="#EFEFEA"/>
+<line x1="200" y1="56" x2="200" y2="832" stroke="#9A9A9A" stroke-width="1.5"/>
+<text x="20" y="105" font-family="Arial" font-size="13" fill="#2B2B2B" text-anchor="start">Dashboard</text>
+<text x="20" y="149" font-family="Arial" font-size="13" fill="#2B2B2B" text-anchor="start">Colaboradores</text>
+<rect x="0" y="168" width="200" height="40" rx="0" fill="#E0DFD8"/>
+<rect x="0" y="168" width="4" height="40" rx="0" fill="#2B2B2B"/>
+<text x="20" y="193" font-family="Arial" font-size="13" fill="#2B2B2B" font-weight="bold" text-anchor="start">EPIs</text>
+<text x="20" y="237" font-family="Arial" font-size="13" fill="#2B2B2B" text-anchor="start">Empréstimos</text>
+<text x="20" y="281" font-family="Arial" font-size="13" fill="#2B2B2B" text-anchor="start">Relatórios</text>
+<text x="20" y="325" font-family="Arial" font-size="13" fill="#2B2B2B" text-anchor="start">Usuários</text>
+<text x="224" y="96" font-family="Arial" font-size="18" fill="#2B2B2B" font-weight="bold" text-anchor="start">Cadastro de EPI</text>
+<line x1="224" y1="108" x2="1256" y2="108" stroke="#D9D7D0" stroke-width="1"/>
+<text x="224" y="134" font-family="Arial" font-size="12" fill="#2B2B2B" font-weight="bold" text-anchor="start">Nome do EPI *</text>
+<rect x="224" y="140" width="430" height="34" rx="4" fill="#FFFFFF" stroke="#9A9A9A" stroke-width="1.5"/>
+<text x="234" y="162" font-family="Arial" font-size="12" fill="#999999" text-anchor="start">Ex.: Capacete de segurança com jugular</text>
+<text x="670" y="134" font-family="Arial" font-size="12" fill="#2B2B2B" font-weight="bold" text-anchor="start">Categoria *</text>
+<rect x="670" y="140" width="280" height="34" rx="4" fill="#FFFFFF" stroke="#9A9A9A" stroke-width="1.5"/>
+<text x="680" y="162" font-family="Arial" font-size="12" fill="#999999" text-anchor="start">Proteção da cabeça</text>
+<text x="934" y="162" font-family="Arial" font-size="12" fill="#666666" text-anchor="start">▾</text>
+<text x="966" y="134" font-family="Arial" font-size="12" fill="#2B2B2B" font-weight="bold" text-anchor="start">Nº do CA (NR-6) *</text>
+<rect x="966" y="140" width="290" height="34" rx="4" fill="#FFFFFF" stroke="#9A9A9A" stroke-width="1.5"/>
+<text x="976" y="162" font-family="Arial" font-size="12" fill="#999999" text-anchor="start">CA 12345</text>
+<text x="224" y="204" font-family="Arial" font-size="12" fill="#2B2B2B" font-weight="bold" text-anchor="start">Validade do CA *</text>
+<rect x="224" y="210" width="200" height="34" rx="4" fill="#FFFFFF" stroke="#9A9A9A" stroke-width="1.5"/>
+<text x="234" y="232" font-family="Arial" font-size="12" fill="#999999" text-anchor="start">dd/mm/aaaa</text>
+<text x="440" y="204" font-family="Arial" font-size="12" fill="#2B2B2B" font-weight="bold" text-anchor="start">Tamanho</text>
+<rect x="440" y="210" width="150" height="34" rx="4" fill="#FFFFFF" stroke="#9A9A9A" stroke-width="1.5"/>
+<text x="450" y="232" font-family="Arial" font-size="12" fill="#999999" text-anchor="start">Único / P / M / G</text>
+<text x="574" y="232" font-family="Arial" font-size="12" fill="#666666" text-anchor="start">▾</text>
+<text x="606" y="204" font-family="Arial" font-size="12" fill="#2B2B2B" font-weight="bold" text-anchor="start">Qtde. em estoque *</text>
+<rect x="606" y="210" width="150" height="34" rx="4" fill="#FFFFFF" stroke="#9A9A9A" stroke-width="1.5"/>
+<text x="616" y="232" font-family="Arial" font-size="12" fill="#999999" text-anchor="start">0</text>
+<text x="772" y="204" font-family="Arial" font-size="12" fill="#2B2B2B" font-weight="bold" text-anchor="start">Estoque mínimo *</text>
+<rect x="772" y="210" width="150" height="34" rx="4" fill="#FFFFFF" stroke="#9A9A9A" stroke-width="1.5"/>
+<text x="782" y="232" font-family="Arial" font-size="12" fill="#999999" text-anchor="start">5</text>
+<text x="938" y="204" font-family="Arial" font-size="12" fill="#2B2B2B" font-weight="bold" text-anchor="start">Descrição</text>
+<rect x="938" y="210" width="318" height="34" rx="4" fill="#FFFFFF" stroke="#9A9A9A" stroke-width="1.5"/>
+<text x="948" y="232" font-family="Arial" font-size="12" fill="#999999" text-anchor="start">Descrição breve do equipamento</text>
+<rect x="940" y="278" width="140" height="36" rx="5" fill="#FFFFFF" stroke="#4A4A4A" stroke-width="1.5"/>
+<text x="1010.0" y="300.5" font-family="Arial" font-size="13" fill="#2B2B2B" text-anchor="middle">Cancelar</text>
+<rect x="1096" y="278" width="160" height="36" rx="5" fill="#4A4A4A"/>
+<text x="1176.0" y="300.5" font-family="Arial" font-size="13" fill="#FFFFFF" font-weight="bold" text-anchor="middle">Salvar EPI</text>
+<text x="224" y="366" font-family="Arial" font-size="14" fill="#2B2B2B" font-weight="bold" text-anchor="start">EPIs cadastrados</text>
+<rect x="224" y="380" width="1032" height="166" rx="4" fill="#FFFFFF" stroke="#9A9A9A" stroke-width="1.5"/>
+<rect x="224" y="380" width="1032" height="30" rx="4" fill="#EDEDE9" stroke="#9A9A9A" stroke-width="1.5"/>
+<text x="234" y="400" font-family="Arial" font-size="10" fill="#555555" font-weight="bold" text-anchor="start">EPI</text>
+<text x="534" y="400" font-family="Arial" font-size="10" fill="#555555" font-weight="bold" text-anchor="start">CATEGORIA</text>
+<text x="704" y="400" font-family="Arial" font-size="10" fill="#555555" font-weight="bold" text-anchor="start">CA</text>
+<text x="804" y="400" font-family="Arial" font-size="10" fill="#555555" font-weight="bold" text-anchor="start">VALIDADE CA</text>
+<text x="1004" y="400" font-family="Arial" font-size="10" fill="#555555" font-weight="bold" text-anchor="start">ESTOQUE</text>
+<text x="1114" y="400" font-family="Arial" font-size="10" fill="#555555" font-weight="bold" text-anchor="start">AÇÕES</text>
+<line x1="224" y1="410" x2="1256" y2="410" stroke="#D9D7D0" stroke-width="1"/>
+<text x="234" y="432" font-family="Arial" font-size="12" fill="#2B2B2B" text-anchor="start">Capacete com jugular</text>
+<text x="534" y="432" font-family="Arial" font-size="12" fill="#2B2B2B" text-anchor="start">Cabeça</text>
+<text x="704" y="432" font-family="Arial" font-size="12" fill="#2B2B2B" text-anchor="start">12345</text>
+<text x="804" y="432" font-family="Arial" font-size="12" fill="#2B2B2B" text-anchor="start">10/05/2027</text>
+<text x="1004" y="432" font-family="Arial" font-size="12" fill="#2B2B2B" text-anchor="start">90</text>
+<text x="1114" y="432" font-family="Arial" font-size="12" fill="#2B2B2B" text-anchor="start">Editar</text>
+<line x1="224" y1="444" x2="1256" y2="444" stroke="#D9D7D0" stroke-width="1"/>
+<text x="234" y="466" font-family="Arial" font-size="12" fill="#2B2B2B" text-anchor="start">Botina com biqueira (42)</text>
+<text x="534" y="466" font-family="Arial" font-size="12" fill="#2B2B2B" text-anchor="start">Pés</text>
+<text x="704" y="466" font-family="Arial" font-size="12" fill="#2B2B2B" text-anchor="start">23456</text>
+<text x="804" y="466" font-family="Arial" font-size="12" fill="#2B2B2B" text-anchor="start">30/11/2026</text>
+<text x="1004" y="466" font-family="Arial" font-size="12" fill="#2B2B2B" text-anchor="start">60</text>
+<text x="1114" y="466" font-family="Arial" font-size="12" fill="#2B2B2B" text-anchor="start">Editar</text>
+<line x1="224" y1="478" x2="1256" y2="478" stroke="#D9D7D0" stroke-width="1"/>
+<text x="234" y="500" font-family="Arial" font-size="12" fill="#2B2B2B" text-anchor="start">Cinto tipo paraquedista</text>
+<text x="534" y="500" font-family="Arial" font-size="12" fill="#2B2B2B" text-anchor="start">Altura</text>
+<text x="704" y="500" font-family="Arial" font-size="12" fill="#2B2B2B" text-anchor="start">34567</text>
+<rect x="804" y="486" width="122" height="18" rx="9" fill="#FFFFFF" stroke="#9A9A9A" stroke-width="1"/>
+<text x="865.0" y="499" font-family="Arial" font-size="10" fill="#555555" text-anchor="middle">08/08/26 a vencer</text>
+<text x="1004" y="500" font-family="Arial" font-size="12" fill="#2B2B2B" text-anchor="start">6</text>
+<text x="1114" y="500" font-family="Arial" font-size="12" fill="#2B2B2B" text-anchor="start">Editar</text>
+<line x1="224" y1="512" x2="1256" y2="512" stroke="#D9D7D0" stroke-width="1"/>
+<text x="234" y="534" font-family="Arial" font-size="12" fill="#2B2B2B" text-anchor="start">Protetor auricular plug</text>
+<text x="534" y="534" font-family="Arial" font-size="12" fill="#2B2B2B" text-anchor="start">Auditiva</text>
+<text x="704" y="534" font-family="Arial" font-size="12" fill="#2B2B2B" text-anchor="start">67890</text>
+<rect x="804" y="520" width="116" height="18" rx="9" fill="#FFFFFF" stroke="#9A9A9A" stroke-width="1"/>
+<text x="862.0" y="533" font-family="Arial" font-size="10" fill="#555555" text-anchor="middle">04/07/26 vencido</text>
+<text x="1004" y="534" font-family="Arial" font-size="12" fill="#2B2B2B" text-anchor="start">200</text>
+<text x="1114" y="534" font-family="Arial" font-size="12" fill="#2B2B2B" text-anchor="start">Editar</text>
+<text x="224" y="816" font-family="Arial" font-size="11" fill="#888888" font-style="italic" text-anchor="start">Tela 04 — Cadastro de EPIs: CA e validade obrigatórios (NR-6); CA vencido é destacado e bloqueado para empréstimo (RF07).</text>
+</svg>

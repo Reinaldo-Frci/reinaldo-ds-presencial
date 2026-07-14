@@ -1,0 +1,63 @@
+{% extends 'core/base.html' %}
+{% block titulo %}{% if colaborador %}Editar colaborador{% else %}Novo colaborador{% endif %}{% endblock %}
+{% block conteudo %}
+<h1>{% if colaborador %}Editar colaborador — {{ colaborador.nome }}{% else %}Cadastro de colaborador{% endif %}</h1>
+
+{% if erros %}
+<div class="erros-form">
+  {% for erro in erros %}<div>{{ erro }}</div>{% endfor %}
+</div>
+{% endif %}
+
+<form method="post" class="painel">
+  {% csrf_token %}
+  <div class="grade">
+    <div class="grupo">
+      <label for="matricula">Matrícula <span class="obrigatorio">*</span></label>
+      <input class="campo" type="text" id="matricula" name="matricula" maxlength="20"
+             value="{{ dados.matricula|default:'' }}">
+    </div>
+    <div class="grupo">
+      <label for="nome">Nome completo <span class="obrigatorio">*</span></label>
+      <input class="campo" type="text" id="nome" name="nome" maxlength="100"
+             value="{{ dados.nome|default:'' }}">
+    </div>
+    <div class="grupo">
+      <label for="cpf">CPF <span class="obrigatorio">*</span></label>
+      <input class="campo" type="text" id="cpf" name="cpf" maxlength="14" placeholder="000.000.000-00"
+             value="{{ dados.cpf|default:'' }}">
+    </div>
+    <div class="grupo">
+      <label for="data_nascimento">Data de nascimento</label>
+      <input class="campo" type="date" id="data_nascimento" name="data_nascimento"
+             value="{{ dados.data_nascimento|default:'' }}">
+    </div>
+    <div class="grupo">
+      <label for="cargo">Cargo <span class="obrigatorio">*</span></label>
+      <input class="campo" type="text" id="cargo" name="cargo" maxlength="60"
+             value="{{ dados.cargo|default:'' }}">
+    </div>
+    <div class="grupo">
+      <label for="setor">Setor <span class="obrigatorio">*</span></label>
+      <input class="campo" type="text" id="setor" name="setor" maxlength="60"
+             placeholder="Alvenaria, Estrutura, Acabamento..."
+             value="{{ dados.setor|default:'' }}">
+    </div>
+    <div class="grupo">
+      <label for="telefone">Telefone</label>
+      <input class="campo" type="text" id="telefone" name="telefone" maxlength="15"
+             placeholder="(00) 00000-0000"
+             value="{{ dados.telefone|default:'' }}">
+    </div>
+    <div class="grupo">
+      <label for="email">E-mail</label>
+      <input class="campo" type="email" id="email" name="email" maxlength="150"
+             value="{{ dados.email|default:'' }}">
+    </div>
+  </div>
+  <div class="acoes">
+    <a class="btn btn-secundario" href="{% url 'colaborador_lista' %}">Cancelar</a>
+    <button class="btn btn-primario" type="submit">Salvar colaborador</button>
+  </div>
+</form>
+{% endblock %}

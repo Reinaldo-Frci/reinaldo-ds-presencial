@@ -1,0 +1,54 @@
+{% extends 'core/base.html' %}
+{% block titulo %}Novo usuário{% endblock %}
+{% block conteudo %}
+<h1>Cadastro de usuário do sistema</h1>
+
+{% if erros %}
+<div class="erros-form">
+  {% for erro in erros %}<div>{{ erro }}</div>{% endfor %}
+</div>
+{% endif %}
+
+<form method="post" class="painel">
+  {% csrf_token %}
+  <div class="grade">
+    <div class="grupo">
+      <label for="nome">Nome <span class="obrigatorio">*</span></label>
+      <input class="campo" type="text" id="nome" name="nome" maxlength="100"
+             value="{{ dados.nome|default:'' }}">
+    </div>
+    <div class="grupo">
+      <label for="username">Usuário (login) <span class="obrigatorio">*</span></label>
+      <input class="campo" type="text" id="username" name="username" maxlength="150"
+             value="{{ dados.username|default:'' }}">
+    </div>
+    <div class="grupo">
+      <label for="perfil">Perfil de acesso <span class="obrigatorio">*</span></label>
+      <select class="campo" id="perfil" name="perfil">
+        <option value="">Selecione</option>
+        {% for valor, rotulo in perfis %}
+        <option value="{{ valor }}" {% if dados.perfil == valor %}selected{% endif %}>{{ rotulo }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="grupo">
+      <label for="email">E-mail</label>
+      <input class="campo" type="email" id="email" name="email" maxlength="150"
+             value="{{ dados.email|default:'' }}">
+    </div>
+    <div class="grupo">
+      <label for="senha1">Senha <span class="obrigatorio">*</span></label>
+      <input class="campo" type="password" id="senha1" name="senha1">
+      <div class="ajuda">Mínimo de 8 caracteres.</div>
+    </div>
+    <div class="grupo">
+      <label for="senha2">Confirmar senha <span class="obrigatorio">*</span></label>
+      <input class="campo" type="password" id="senha2" name="senha2">
+    </div>
+  </div>
+  <div class="acoes">
+    <a class="btn btn-secundario" href="{% url 'usuario_lista' %}">Cancelar</a>
+    <button class="btn btn-primario" type="submit">Salvar usuário</button>
+  </div>
+</form>
+{% endblock %}

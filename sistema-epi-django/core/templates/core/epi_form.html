@@ -1,0 +1,70 @@
+{% extends 'core/base.html' %}
+{% block titulo %}{% if epi %}Editar EPI{% else %}Novo EPI{% endif %}{% endblock %}
+{% block conteudo %}
+<h1>{% if epi %}Editar EPI — {{ epi.nome }}{% else %}Cadastro de EPI{% endif %}</h1>
+
+{% if erros %}
+<div class="erros-form">
+  {% for erro in erros %}<div>{{ erro }}</div>{% endfor %}
+</div>
+{% endif %}
+
+<form method="post" class="painel">
+  {% csrf_token %}
+  <div class="grade">
+    <div class="grupo">
+      <label for="nome">Nome do EPI <span class="obrigatorio">*</span></label>
+      <input class="campo" type="text" id="nome" name="nome" maxlength="100"
+             placeholder="Ex.: Capacete de segurança com jugular"
+             value="{{ dados.nome|default:'' }}">
+    </div>
+    <div class="grupo">
+      <label for="categoria">Categoria <span class="obrigatorio">*</span></label>
+      <select class="campo" id="categoria" name="categoria">
+        <option value="">Selecione</option>
+        {% for valor, rotulo in categorias %}
+        <option value="{{ valor }}"
+          {% if dados.categoria == valor %}selected{% endif %}>
+          {{ rotulo }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="grupo">
+      <label for="ca_numero">Nº do CA (NR-6) <span class="obrigatorio">*</span></label>
+      <input class="campo" type="text" id="ca_numero" name="ca_numero" maxlength="20"
+             placeholder="CA 12345"
+             value="{{ dados.ca_numero|default:'' }}">
+    </div>
+    <div class="grupo">
+      <label for="ca_validade">Validade do CA <span class="obrigatorio">*</span></label>
+      <input class="campo" type="date" id="ca_validade" name="ca_validade"
+             value="{{ dados.ca_validade|default:'' }}">
+    </div>
+    <div class="grupo">
+      <label for="tamanho">Tamanho</label>
+      <input class="campo" type="text" id="tamanho" name="tamanho" maxlength="10"
+             placeholder="Único / P / M / G / 42"
+             value="{{ dados.tamanho|default:'' }}">
+    </div>
+    <div class="grupo">
+      <label for="qtd_estoque">Qtde. em estoque <span class="obrigatorio">*</span></label>
+      <input class="campo" type="number" id="qtd_estoque" name="qtd_estoque" min="0"
+             value="{{ dados.qtd_estoque|default:'0' }}">
+    </div>
+    <div class="grupo">
+      <label for="qtd_minima">Estoque mínimo <span class="obrigatorio">*</span></label>
+      <input class="campo" type="number" id="qtd_minima" name="qtd_minima" min="0"
+             value="{{ dados.qtd_minima|default:'5' }}">
+    </div>
+    <div class="grupo">
+      <label for="descricao">Descrição</label>
+      <input class="campo" type="text" id="descricao" name="descricao" maxlength="255"
+             value="{{ dados.descricao|default:'' }}">
+    </div>
+  </div>
+  <div class="acoes">
+    <a class="btn btn-secundario" href="{% url 'epi_lista' %}">Cancelar</a>
+    <button class="btn btn-primario" type="submit">Salvar EPI</button>
+  </div>
+</form>
+{% endblock %}

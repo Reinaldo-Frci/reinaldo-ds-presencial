@@ -1,0 +1,41 @@
+{% extends 'core/base.html' %}
+{% block titulo %}Empréstimos{% endblock %}
+{% block conteudo %}
+<h1>Empréstimos</h1>
+<div class="filtros">
+  <form method="get" class="filtros" style="margin:0;">
+    <input class="campo" type="text" name="q" value="{{ busca }}" placeholder="Buscar colaborador…">
+    <select class="campo" name="status">
+      <option value="">Status: todos</option>
+      {% for valor, rotulo in status_choices %}
+      <option value="{{ valor }}" {% if valor == status_sel %}selected{% endif %}>{{ rotulo }}</option>
+      {% endfor %}
+    </select>
+    <button class="btn btn-secundario" type="submit">Filtrar</button>
+  </form>
+  <a class="btn btn-primario" style="margin-left:auto;" href="{% url 'emprestimo_novo' %}">+ Registrar empréstimo</a>
+</div>
+<table>
+  <tr><th>Nº</th><th>Colaborador</th><th>Itens</th><th>Empréstimo</th><th>Prev. devolução</th><th>Status</th><th>Ações</th></tr>
+  {% for emp in emprestimos %}
+  <tr>
+    <td>{{ emp.pk }}</td>
+    <td>{{ emp.colaborador.nome }}</td>
+    <td>{{ emp.itens.count }}</td>
+    <td>{{ emp.data_emprestimo|date:'d/m/Y H:i' }}</td>
+    <td>{{ emp.data_prevista_devolucao|date:'d/m/Y' }}</td>
+    <td>{% if emp.status == 'ATIVO' %}<span class="tag tag-ok">Ativo</span>
+        {% elif emp.status == 'ATRASADO' %}<span class="tag tag-alerta">Atrasado</span>
+        {% else %}<span class="tag tag-neutro">Devolvido</span>{% endif %}</td>
+    <td>
+      <a class="btn btn-secundario btn-mini" href="{% url 'emprestimo_ficha' emp.pk %}">Ficha</a>
+      {% if emp.status != 'DEVOLVIDO' %}
+      <a class="btn btn-primario btn-mini" href="{% url 'emprestimo_devolucao' emp.pk %}">Devolução</a>
+      {% endif %}
+    </td>
+  </tr>
+  {% empty %}
+  <tr><td colspan="7">Nenhum empréstimo encontrado. <a href="{% url 'emprestimo_novo' %}">Registrar o primeiro</a>.</td></tr>
+  {% endfor %}
+</table>
+{% endblock %}

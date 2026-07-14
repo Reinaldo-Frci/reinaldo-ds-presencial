@@ -1,7 +1,3 @@
-"""
-Popula o banco com dados de demonstração para avaliação do sistema.
-Uso: python manage.py seed
-"""
 from datetime import timedelta
 
 from django.core.management.base import BaseCommand
@@ -15,14 +11,12 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         if Usuario.objects.exists():
-            self.stdout.write(self.style.WARNING(
-                'Banco já possui dados — seed ignorado.'))
+            self.stdout.write(self.style.WARNING('Banco já possui dados — seed ignorado.'))
             return
 
         hoje = timezone.localdate()
 
-        # ----- Usuários do sistema -----
-        admin = Usuario.objects.create_superuser(
+        Usuario.objects.create_superuser(
             username='admin', password='admin123', email='admin@construtora.com.br',
             first_name='Administrador', perfil=Usuario.Perfil.ADMINISTRADOR)
         tecnico = Usuario.objects.create_user(
@@ -32,7 +26,6 @@ class Command(BaseCommand):
             username='almoxarife', password='almoxarife123',
             first_name='Paulo', last_name='Souza', perfil=Usuario.Perfil.ALMOXARIFE)
 
-        # ----- Colaboradores da construtora -----
         colaboradores = [
             ('001201', 'Carlos Andrade', '111.444.777-35', 'Pedreiro', 'Estrutura'),
             ('001202', 'José Pereira', '222.555.888-46', 'Servente', 'Alvenaria'),
@@ -40,11 +33,10 @@ class Command(BaseCommand):
             ('001204', 'Fernanda Costa', '444.777.111-68', 'Mestre de obras', 'Estrutura'),
             ('001205', 'Ricardo Santos', '555.888.222-79', 'Pintor', 'Acabamento'),
         ]
-        objs = [Colaborador(matricula=m, nome=n, cpf=c, cargo=cg, setor=s)
-                for m, n, c, cg, s in colaboradores]
-        Colaborador.objects.bulk_create(objs)
+        Colaborador.objects.bulk_create([
+            Colaborador(matricula=m, nome=n, cpf=c, cargo=cg, setor=s)
+            for m, n, c, cg, s in colaboradores])
 
-        # ----- EPIs típicos de canteiro de obras -----
         epis = [
             ('Capacete de segurança com jugular', EPI.Categoria.CABECA,
              'CA 12345', hoje + timedelta(days=400), 'Único', 90, 15),
@@ -57,14 +49,13 @@ class Command(BaseCommand):
             ('Óculos de proteção incolor', EPI.Categoria.VISUAL,
              'CA 56789', hoje + timedelta(days=500), 'Único', 80, 10),
             ('Protetor auricular plug', EPI.Categoria.AUDITIVA,
-             'CA 67890', hoje - timedelta(days=10), 'Único', 200, 50),  # CA vencido (demo RF07)
+             'CA 67890', hoje - timedelta(days=10), 'Único', 200, 50),
         ]
         for nome, cat, ca, val, tam, est, minimo in epis:
             EPI.objects.create(nome=nome, categoria=cat, ca_numero=ca,
                                ca_validade=val, tamanho=tam,
                                qtd_estoque=est, qtd_minima=minimo)
 
-        # ----- Empréstimos de demonstração -----
         carlos = Colaborador.objects.get(matricula='001201')
         jose = Colaborador.objects.get(matricula='001202')
         capacete = EPI.objects.get(ca_numero='CA 12345')
@@ -82,7 +73,7 @@ class Command(BaseCommand):
 
         emp2 = Emprestimo.objects.create(
             colaborador=jose, usuario=tecnico,
-            data_prevista_devolucao=hoje - timedelta(days=3))  # atrasado (demo RN04)
+            data_prevista_devolucao=hoje - timedelta(days=3))
         ItemEmprestimo.objects.create(emprestimo=emp2, epi=capacete, quantidade=1)
         capacete.qtd_estoque -= 1
         capacete.save()

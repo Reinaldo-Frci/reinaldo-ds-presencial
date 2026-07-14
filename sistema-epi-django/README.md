@@ -59,20 +59,39 @@ Acesse **http://127.0.0.1:8000** e entre com um dos usuários:
 Os dados de demonstração incluem um EPI com **CA vencido** (protetor auricular) e um
 empréstimo **atrasado**, para demonstrar as validações e alertas na apresentação.
 
+## Usando MySQL (opcional)
+
+O projeto usa SQLite por padrão. Para MySQL, instale `mysqlclient`, crie o banco com
+o script `docs/script_banco_epi.sql` (ou deixe o `migrate` criar as tabelas) e altere
+`DATABASES` em `sistema_epi/settings.py`:
+
+```python
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'sistema_epi',
+        'USER': 'root',
+        'PASSWORD': 'sua_senha',
+        'HOST': 'localhost',
+        'PORT': '3306',
+    }
+}
+```
+
 ## Estrutura do projeto
 
 ```
 sistema-epi-django/
 ├── manage.py
 ├── requirements.txt
-├── sistema_epi/          # configurações do projeto
-├── core/                 # app principal
-│   ├── models.py         # Usuario, Colaborador, EPI, Emprestimo, ItemEmprestimo (DER)
-│   ├── forms.py          # validações das regras de negócio
-│   ├── views.py          # telas e fluxos (cada view referencia o RF que atende)
-│   └── management/commands/seed.py
-├── templates/core/       # telas do sistema
-└── static/css/style.css  # identidade visual
+├── sistema_epi/              # configurações do projeto (settings e urls)
+└── core/                     # app principal
+    ├── models.py             # Usuario, Colaborador, EPI, Emprestimo, ItemEmprestimo (DER)
+    ├── views.py              # telas, validações e regras de negócio
+    ├── urls.py               # rotas do app
+    ├── templates/core/       # páginas HTML
+    ├── static/css/style.css  # identidade visual
+    └── management/commands/seed.py
 ```
 
 ## Documentação (Etapa 1)

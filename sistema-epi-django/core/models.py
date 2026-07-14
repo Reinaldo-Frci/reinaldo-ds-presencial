@@ -1,8 +1,3 @@
-"""
-Models do Sistema de Gerenciamento de EPIs.
-Espelham o DER da documentação técnica (Etapa 1):
-usuario, colaborador, epi, emprestimo e item_emprestimo.
-"""
 from datetime import timedelta
 
 from django.contrib.auth.models import AbstractUser
@@ -12,7 +7,6 @@ from django.utils import timezone
 
 
 class Usuario(AbstractUser):
-    """Usuário do sistema (quem opera o software) — RF03/RF04."""
 
     class Perfil(models.TextChoices):
         ADMINISTRADOR = 'ADMINISTRADOR', 'Administrador'
@@ -31,8 +25,6 @@ class Usuario(AbstractUser):
 
 
 class Colaborador(models.Model):
-    """Colaborador da construtora que recebe os EPIs — RF01."""
-
     matricula = models.CharField('Matrícula', max_length=20, unique=True)
     nome = models.CharField('Nome completo', max_length=100)
     cpf = models.CharField('CPF', max_length=14, unique=True,
@@ -55,7 +47,6 @@ class Colaborador(models.Model):
 
 
 class EPI(models.Model):
-    """Equipamento de Proteção Individual, com CA e estoque — RF02/RF07."""
 
     class Categoria(models.TextChoices):
         CABECA = 'CABECA', 'Proteção da cabeça'
@@ -85,14 +76,12 @@ class EPI(models.Model):
         verbose_name = 'EPI'
         verbose_name_plural = 'EPIs'
 
-    # ----- Regras de negócio (RN02) -----
     @property
     def ca_vencido(self):
         return self.ca_validade < timezone.localdate()
 
     @property
     def ca_a_vencer(self):
-        """CA vence nos próximos 30 dias (RF08)."""
         hoje = timezone.localdate()
         return not self.ca_vencido and self.ca_validade <= hoje + timedelta(days=30)
 
@@ -102,7 +91,6 @@ class EPI(models.Model):
 
     @property
     def disponivel(self):
-        """EPI só pode ser emprestado se ativo, com estoque e CA vigente."""
         return self.ativo and self.qtd_estoque > 0 and not self.ca_vencido
 
     def __str__(self):
@@ -111,7 +99,6 @@ class EPI(models.Model):
 
 
 class Emprestimo(models.Model):
-    """Cabeçalho do empréstimo (ficha de entrega de EPI, NR-6) — RF05."""
 
     class Status(models.TextChoices):
         ATIVO = 'ATIVO', 'Ativo'
@@ -136,7 +123,6 @@ class Emprestimo(models.Model):
 
     @classmethod
     def atualizar_atrasados(cls):
-        """RN04: empréstimos ativos com prazo vencido passam a ATRASADO."""
         cls.objects.filter(
             status=cls.Status.ATIVO,
             data_prevista_devolucao__lt=timezone.localdate(),
@@ -151,7 +137,6 @@ class Emprestimo(models.Model):
 
 
 class ItemEmprestimo(models.Model):
-    """Item (EPI) de um empréstimo — RF05/RF06."""
 
     class Condicao(models.TextChoices):
         BOM_ESTADO = 'BOM_ESTADO', 'Bom estado'

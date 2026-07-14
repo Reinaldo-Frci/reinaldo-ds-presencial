@@ -1,0 +1,20 @@
+{% extends 'core/base.html' %}
+{% block titulo %}Usuários{% endblock %}
+{% block conteudo %}
+<h1>Usuários do sistema</h1>
+<div class="filtros">
+  <a class="btn btn-primario" style="margin-left:auto;" href="{% url 'usuario_novo' %}">+ Novo usuário</a>
+</div>
+<table>
+  <tr><th>Nome</th><th>Usuário</th><th>E-mail</th><th>Perfil</th><th>Status</th></tr>
+  {% for u in usuarios %}
+  <tr>
+    <td>{{ u.get_full_name|default:'—' }}</td>
+    <td>{{ u.username }}</td>
+    <td>{{ u.email|default:'—' }}</td>
+    <td>{{ u.get_perfil_display }}</td>
+    <td>{% if u.is_active %}<span class="tag tag-ok">Ativo</span>{% else %}<span class="tag tag-neutro">Inativo</span>{% endif %}</td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}

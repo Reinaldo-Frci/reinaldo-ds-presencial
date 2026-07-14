@@ -1,7 +1,3 @@
-"""
-Configurações do projeto Sistema de Gerenciamento de EPIs.
-Empresa de construção civil — S.A. 4ª fase, CT Desenvolvimento de Sistemas.
-"""
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -35,7 +31,7 @@ ROOT_URLCONF = 'sistema_epi.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates'],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -49,8 +45,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'sistema_epi.wsgi.application'
 
-# Banco de dados: SQLite por padrão (zero configuração para avaliação).
-# Para MySQL, ver instruções no README.md.
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -62,7 +56,6 @@ AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator'},
 ]
 
-# Usuário customizado com perfil de acesso (RF03/RF04)
 AUTH_USER_MODEL = 'core.Usuario'
 
 LOGIN_URL = 'login'
@@ -75,6 +68,5 @@ USE_I18N = True
 USE_TZ = True
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS = [BASE_DIR / 'static']
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

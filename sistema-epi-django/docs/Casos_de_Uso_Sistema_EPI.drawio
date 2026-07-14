@@ -5,83 +5,66 @@
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
 
-        <mxCell id="titulo" value="Diagrama de Casos de Uso - Sistema de Gerenciamento de EPIs" style="text;html=1;fontSize=18;fontStyle=1;align=center;" vertex="1" parent="1">
+        <mxCell id="titulo" value="Diagrama de Casos de Uso — Sistema de Gerenciamento de EPIs" style="text;html=1;fontSize=18;fontStyle=1;align=center;" vertex="1" parent="1">
           <mxGeometry x="250" y="10" width="680" height="30" as="geometry" />
         </mxCell>
 
         <!-- Fronteira do sistema -->
         <mxCell id="sistema" value="Sistema de Gerenciamento de EPIs" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;fontSize=14;fontStyle=1;fillColor=none;strokeColor=#000000;" vertex="1" parent="1">
-          <mxGeometry x="300" y="60" width="560" height="720" as="geometry" />
+          <mxGeometry x="400" y="60" width="360" height="690" as="geometry" />
         </mxCell>
 
         <!-- Atores -->
+        <mxCell id="atorOperador" value="Técnico de Segurança /&#10;Almoxarife" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="130" y="300" width="40" height="80" as="geometry" />
+        </mxCell>
         <mxCell id="atorAdmin" value="Administrador" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontSize=12;" vertex="1" parent="1">
-          <mxGeometry x="100" y="140" width="40" height="80" as="geometry" />
-        </mxCell>
-        <mxCell id="atorTec" value="Técnico de Segurança&#10;do Trabalho" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontSize=12;" vertex="1" parent="1">
-          <mxGeometry x="100" y="440" width="40" height="80" as="geometry" />
-        </mxCell>
-        <mxCell id="atorColab" value="Colaborador&#10;(consulta)" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontSize=12;" vertex="1" parent="1">
-          <mxGeometry x="1000" y="440" width="40" height="80" as="geometry" />
+          <mxGeometry x="130" y="600" width="40" height="80" as="geometry" />
         </mxCell>
 
-        <!-- Casos de uso -->
-        <mxCell id="ucLogin" value="Autenticar no sistema" style="ellipse;whiteSpace=wrap;html=1;fontSize=12;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
-          <mxGeometry x="360" y="90" width="190" height="60" as="geometry" />
+        <!-- Casos de uso (espelham os menus do sistema) -->
+        <mxCell id="uc1" value="Autenticar no sistema" style="ellipse;whiteSpace=wrap;html=1;fontSize=12;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="470" y="90" width="220" height="56" as="geometry" />
         </mxCell>
-        <mxCell id="ucUsuarios" value="Gerenciar usuários do sistema" style="ellipse;whiteSpace=wrap;html=1;fontSize=12;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
-          <mxGeometry x="620" y="90" width="200" height="60" as="geometry" />
+        <mxCell id="uc2" value="Cadastrar colaboradores" style="ellipse;whiteSpace=wrap;html=1;fontSize=12;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="470" y="168" width="220" height="56" as="geometry" />
         </mxCell>
-        <mxCell id="ucColab" value="Cadastrar colaboradores" style="ellipse;whiteSpace=wrap;html=1;fontSize=12;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
-          <mxGeometry x="360" y="190" width="190" height="60" as="geometry" />
+        <mxCell id="uc3" value="Cadastrar EPIs" style="ellipse;whiteSpace=wrap;html=1;fontSize=12;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="470" y="246" width="220" height="56" as="geometry" />
         </mxCell>
-        <mxCell id="ucEpi" value="Cadastrar EPIs&#10;(com CA e validade)" style="ellipse;whiteSpace=wrap;html=1;fontSize=12;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
-          <mxGeometry x="620" y="190" width="200" height="60" as="geometry" />
+        <mxCell id="uc4" value="Registrar empréstimo&#10;de EPI" style="ellipse;whiteSpace=wrap;html=1;fontSize=12;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="470" y="324" width="220" height="56" as="geometry" />
         </mxCell>
-        <mxCell id="ucEmprestimo" value="Registrar empréstimo&#10;de EPI" style="ellipse;whiteSpace=wrap;html=1;fontSize=12;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
-          <mxGeometry x="360" y="310" width="190" height="60" as="geometry" />
+        <mxCell id="uc5" value="Registrar devolução&#10;de EPI" style="ellipse;whiteSpace=wrap;html=1;fontSize=12;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="470" y="402" width="220" height="56" as="geometry" />
         </mxCell>
-        <mxCell id="ucVerifEstoque" value="Verificar disponibilidade&#10;em estoque" style="ellipse;whiteSpace=wrap;html=1;fontSize=12;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
-          <mxGeometry x="620" y="310" width="200" height="60" as="geometry" />
+        <mxCell id="uc6" value="Emitir ficha de entrega&#10;de EPI (NR-6)" style="ellipse;whiteSpace=wrap;html=1;fontSize=12;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="470" y="480" width="220" height="56" as="geometry" />
         </mxCell>
-        <mxCell id="ucDevolucao" value="Registrar devolução&#10;de EPI" style="ellipse;whiteSpace=wrap;html=1;fontSize=12;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
-          <mxGeometry x="360" y="420" width="190" height="60" as="geometry" />
+        <mxCell id="uc7" value="Consultar relatórios&#10;e alertas" style="ellipse;whiteSpace=wrap;html=1;fontSize=12;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="470" y="558" width="220" height="56" as="geometry" />
         </mxCell>
-        <mxCell id="ucHistorico" value="Consultar histórico&#10;de empréstimos" style="ellipse;whiteSpace=wrap;html=1;fontSize=12;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
-          <mxGeometry x="620" y="420" width="200" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="ucRelatorios" value="Gerar relatórios&#10;(empréstimos, estoque, CA)" style="ellipse;whiteSpace=wrap;html=1;fontSize=12;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
-          <mxGeometry x="360" y="530" width="190" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="ucAlertas" value="Visualizar alertas&#10;(devolução atrasada, CA vencido, estoque mínimo)" style="ellipse;whiteSpace=wrap;html=1;fontSize=11;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
-          <mxGeometry x="620" y="530" width="200" height="70" as="geometry" />
-        </mxCell>
-        <mxCell id="ucFicha" value="Emitir ficha de entrega&#10;de EPI (NR-6)" style="ellipse;whiteSpace=wrap;html=1;fontSize=12;fillColor=#f5f5f5;strokeColor=#666666;" vertex="1" parent="1">
-          <mxGeometry x="360" y="650" width="190" height="60" as="geometry" />
+        <mxCell id="uc8" value="Gerenciar usuários&#10;do sistema" style="ellipse;whiteSpace=wrap;html=1;fontSize=12;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="470" y="656" width="220" height="56" as="geometry" />
         </mxCell>
 
-        <!-- Associações Administrador -->
-        <mxCell id="a1" style="endArrow=none;html=1;" edge="1" parent="1" source="atorAdmin" target="ucLogin"><mxGeometry relative="1" as="geometry" /></mxCell>
-        <mxCell id="a2" style="endArrow=none;html=1;" edge="1" parent="1" source="atorAdmin" target="ucUsuarios"><mxGeometry relative="1" as="geometry" /></mxCell>
-        <mxCell id="a3" style="endArrow=none;html=1;" edge="1" parent="1" source="atorAdmin" target="ucColab"><mxGeometry relative="1" as="geometry" /></mxCell>
-        <mxCell id="a4" style="endArrow=none;html=1;" edge="1" parent="1" source="atorAdmin" target="ucEpi"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <!-- Associações do operador (Técnico / Almoxarife) -->
+        <mxCell id="a1" style="endArrow=none;html=1;" edge="1" parent="1" source="atorOperador" target="uc1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="a2" style="endArrow=none;html=1;" edge="1" parent="1" source="atorOperador" target="uc2"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="a3" style="endArrow=none;html=1;" edge="1" parent="1" source="atorOperador" target="uc3"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="a4" style="endArrow=none;html=1;" edge="1" parent="1" source="atorOperador" target="uc4"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="a5" style="endArrow=none;html=1;" edge="1" parent="1" source="atorOperador" target="uc5"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="a6" style="endArrow=none;html=1;" edge="1" parent="1" source="atorOperador" target="uc6"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="a7" style="endArrow=none;html=1;" edge="1" parent="1" source="atorOperador" target="uc7"><mxGeometry relative="1" as="geometry" /></mxCell>
 
-        <!-- Associações Técnico -->
-        <mxCell id="t1" style="endArrow=none;html=1;" edge="1" parent="1" source="atorTec" target="ucLogin"><mxGeometry relative="1" as="geometry" /></mxCell>
-        <mxCell id="t2" style="endArrow=none;html=1;" edge="1" parent="1" source="atorTec" target="ucColab"><mxGeometry relative="1" as="geometry" /></mxCell>
-        <mxCell id="t3" style="endArrow=none;html=1;" edge="1" parent="1" source="atorTec" target="ucEpi"><mxGeometry relative="1" as="geometry" /></mxCell>
-        <mxCell id="t4" style="endArrow=none;html=1;" edge="1" parent="1" source="atorTec" target="ucEmprestimo"><mxGeometry relative="1" as="geometry" /></mxCell>
-        <mxCell id="t5" style="endArrow=none;html=1;" edge="1" parent="1" source="atorTec" target="ucDevolucao"><mxGeometry relative="1" as="geometry" /></mxCell>
-        <mxCell id="t6" style="endArrow=none;html=1;" edge="1" parent="1" source="atorTec" target="ucRelatorios"><mxGeometry relative="1" as="geometry" /></mxCell>
-        <mxCell id="t7" style="endArrow=none;html=1;" edge="1" parent="1" source="atorTec" target="ucHistorico"><mxGeometry relative="1" as="geometry" /></mxCell>
-        <mxCell id="t8" style="endArrow=none;html=1;" edge="1" parent="1" source="atorTec" target="ucAlertas"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <!-- Administrador: herda o operador (generalização) + gerencia usuários -->
+        <mxCell id="ger" style="endArrow=block;endFill=0;endSize=16;html=1;" edge="1" parent="1" source="atorAdmin" target="atorOperador"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="a8" style="endArrow=none;html=1;" edge="1" parent="1" source="atorAdmin" target="uc8"><mxGeometry relative="1" as="geometry" /></mxCell>
 
-        <!-- Associação Colaborador -->
-        <mxCell id="co1" style="endArrow=none;html=1;" edge="1" parent="1" source="atorColab" target="ucHistorico"><mxGeometry relative="1" as="geometry" /></mxCell>
-
-        <!-- Includes -->
-        <mxCell id="inc1" value="&lt;&lt;include&gt;&gt;" style="endArrow=open;endSize=12;dashed=1;html=1;fontSize=11;" edge="1" parent="1" source="ucEmprestimo" target="ucVerifEstoque"><mxGeometry relative="1" as="geometry" /></mxCell>
-        <mxCell id="inc2" value="&lt;&lt;include&gt;&gt;" style="endArrow=open;endSize=12;dashed=1;html=1;fontSize=11;" edge="1" parent="1" source="ucEmprestimo" target="ucFicha"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <!-- Nota explicativa -->
+        <mxCell id="nota" value="A seta de generalização indica que o Administrador realiza todos os casos de uso do Técnico de Segurança / Almoxarife e, adicionalmente, gerencia os usuários do sistema (acesso restrito ao perfil Administrador)." style="text;html=1;fontSize=11;fontStyle=2;align=left;" vertex="1" parent="1">
+          <mxGeometry x="130" y="760" width="700" height="46" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>

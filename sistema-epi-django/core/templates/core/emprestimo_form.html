@@ -1,0 +1,73 @@
+{% extends 'core/base.html' %}
+{% block titulo %}Registrar empréstimo{% endblock %}
+{% block conteudo %}
+<h1>Registrar empréstimo de EPIs</h1>
+
+{% if erros %}
+<div class="erros-form">
+  {% for erro in erros %}<div>{{ erro }}</div>{% endfor %}
+</div>
+{% endif %}
+
+<form method="post" class="painel">
+  {% csrf_token %}
+  <div class="grade">
+    <div class="grupo">
+      <label for="colaborador">Colaborador <span class="obrigatorio">*</span></label>
+      <select class="campo" id="colaborador" name="colaborador">
+        <option value="">Selecione o colaborador</option>
+        {% for c in colaboradores %}
+        <option value="{{ c.pk }}" {% if dados.colaborador == c.pk|stringformat:'s' %}selected{% endif %}>{{ c }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="grupo">
+      <label for="data_prevista_devolucao">Data prevista de devolução <span class="obrigatorio">*</span></label>
+      <input class="campo" type="date" id="data_prevista_devolucao" name="data_prevista_devolucao"
+             value="{{ dados.data_prevista_devolucao|default:'' }}">
+    </div>
+    <div class="grupo">
+      <label for="observacao">Observação</label>
+      <input class="campo" type="text" id="observacao" name="observacao" maxlength="255"
+             value="{{ dados.observacao|default:'' }}">
+    </div>
+  </div>
+
+  <h2>Itens do empréstimo</h2>
+  <p class="ajuda" style="margin-bottom:10px;">Selecione o EPI e a quantidade. O sistema valida o estoque disponível e a validade do CA ao confirmar.</p>
+  <table>
+    <tr><th style="width:75%;">EPI (com estoque disponível)</th><th>Quantidade</th></tr>
+    <tr>
+      <td>
+        <select class="campo" name="epi_1">
+          <option value="">— selecione o EPI —</option>
+          {% for e in epis %}<option value="{{ e.pk }}">{{ e }} | estoque: {{ e.qtd_estoque }}</option>{% endfor %}
+        </select>
+      </td>
+      <td><input class="campo" type="number" name="qtd_1" min="1" value="1"></td>
+    </tr>
+    <tr>
+      <td>
+        <select class="campo" name="epi_2">
+          <option value="">— selecione o EPI —</option>
+          {% for e in epis %}<option value="{{ e.pk }}">{{ e }} | estoque: {{ e.qtd_estoque }}</option>{% endfor %}
+        </select>
+      </td>
+      <td><input class="campo" type="number" name="qtd_2" min="1" value="1"></td>
+    </tr>
+    <tr>
+      <td>
+        <select class="campo" name="epi_3">
+          <option value="">— selecione o EPI —</option>
+          {% for e in epis %}<option value="{{ e.pk }}">{{ e }} | estoque: {{ e.qtd_estoque }}</option>{% endfor %}
+        </select>
+      </td>
+      <td><input class="campo" type="number" name="qtd_3" min="1" value="1"></td>
+    </tr>
+  </table>
+  <div class="acoes">
+    <a class="btn btn-secundario" href="{% url 'emprestimo_lista' %}">Cancelar</a>
+    <button class="btn btn-primario" type="submit">Confirmar empréstimo e emitir ficha</button>
+  </div>
+</form>
+{% endblock %}
